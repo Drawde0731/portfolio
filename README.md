@@ -2,7 +2,7 @@
 
 Personal portfolio website built with Next.js 15, TypeScript, Tailwind CSS, and Framer Motion.
 
-**Live:** [jecomplido.dev](https://jecomplido.dev)
+**Live:** (https://drawde-portfolio.vercel.app/)
 
 ## Tech Stack
 
