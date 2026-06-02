@@ -100,21 +100,24 @@ export default function ExperienceSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
               >
-                <div
-                  className="bg-white rounded-2xl p-5 flex items-center gap-4"
+                <a
+                  href={cert.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white rounded-2xl p-5 flex items-center gap-4 group hover:shadow-card-hover transition-shadow duration-300 block"
                   style={{ border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 1px 2px rgba(0,0,0,0.03)" }}
                 >
                   <div
-                    className="p-2.5 rounded-xl shrink-0"
+                    className="p-2.5 rounded-xl shrink-0 group-hover:bg-ink group-hover:border-ink transition-all duration-200"
                     style={{ background: "#F5F5F3", border: "1px solid rgba(0,0,0,0.07)" }}
                   >
-                    <Icon size={14} className="text-text-secondary" />
+                    <Icon size={14} className="text-text-secondary group-hover:text-gray-300 transition-colors duration-200" />
                   </div>
                   <div>
-                    <div className="text-sm font-medium text-ink leading-tight">{cert.title}</div>
+                    <div className="text-sm font-medium text-ink leading-tight group-hover:text-ink transition-colors">{cert.title}</div>
                     <div className="text-xs text-text-muted mt-0.5">{cert.issuer}</div>
                   </div>
-                </div>
+                </a>
               </motion.div>
             );
           })}

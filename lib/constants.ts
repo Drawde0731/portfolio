@@ -173,14 +173,10 @@ export const EXPERIENCE = [
 ];
 
 export const CERTIFICATIONS = [
-  { title: "RPA Fundamentals", issuer: "UIPath", icon: "Bot" },
-  { title: "RPA Fundamentals", issuer: "IBM", icon: "Bot" },
-  { title: "Oracle Partner Network Solution", issuer: "Oracle", icon: "Database" },
-  { title: "Informatica MDM SaaS", issuer: "Informatica", icon: "Server" },
-  { title: "Blockchain Foundation", issuer: "Various", icon: "Link" },
-  {
-    title: "Programming & Technology Fundamentals",
-    issuer: "Coursera",
-    icon: "GraduationCap",
-  },
+  { title: "RPA Fundamentals", issuer: "UIPath", icon: "Bot", href: "https://drive.google.com/drive/folders/18Xk9NpqbkwWwBGflUk8A-wxOk509ow_p?usp=sharing" },
+  { title: "RPA Fundamentals", issuer: "IBM",    icon: "Bot", href: "https://drive.google.com/drive/folders/16pdHf5wGCL1-WOGmT3VgxOHmylFeavmc?usp=sharing" },
+  { title: "Oracle Partner Network Solution", issuer: "Oracle", icon: "Database", href: "https://drive.google.com/drive/folders/1NC1AoRm9QWZaTQSxnK1oGuG_l28xJw6R?usp=sharing" },
+  { title: "Informatica MDM SaaS", issuer: "Informatica", icon: "Server", href: "https://drive.google.com/drive/folders/1IduNErLeoqvvvBrv_sAJhckhhRjrJvof?usp=sharing" },
+  { title: "Blockchain Foundation", issuer: "Various", icon: "Link", href: "https://drive.google.com/drive/folders/1Wos_lMQmEKCbIPm7v9MB3qkw_2IimBLf?usp=sharing" },
+  { title: "Programming & Technology Fundamentals", issuer: "Coursera", icon: "GraduationCap", href: "https://drive.google.com/drive/folders/1bcVRMPz7EkGpjwdLOW-POQ-r3brDmH2P?usp=sharing" },
 ];

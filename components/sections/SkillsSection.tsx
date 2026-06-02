@@ -20,7 +20,7 @@ export default function SkillsSection() {
       <div className="max-w-6xl mx-auto px-6">
         <SectionHeader
           eyebrow="Capabilities"
-          title="Technical Arsenal"
+          title="Technology Stack"
           subtitle="Cross-platform fluency across frontend, mobile, backend, AI, and automation."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

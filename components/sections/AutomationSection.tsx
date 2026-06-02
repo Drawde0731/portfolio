@@ -52,22 +52,27 @@ export default function AutomationSection() {
 
         {/* Certifications */}
         <p className="text-[10px] font-semibold tracking-[0.22em] uppercase text-text-muted mb-8 text-center">Automation Certifications</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
-          {CERTIFICATIONS.map((cert, i) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12 max-w-lg mx-auto">
+          {CERTIFICATIONS.filter(c => c.issuer === "UIPath" || c.issuer === "IBM").map((cert, i) => {
             const Icon = CERT_ICONS[cert.icon] ?? GraduationCap;
             return (
               <motion.div key={`${cert.title}-${cert.issuer}`} initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.06 }}>
-                <div className="bg-white rounded-2xl p-5 flex items-center gap-4"
-                  style={{ border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 1px 2px rgba(0,0,0,0.03)" }}>
-                  <div className="p-2.5 rounded-xl shrink-0" style={{ background: "#F5F5F3", border: "1px solid rgba(0,0,0,0.07)" }}>
-                    <Icon size={14} className="text-text-secondary" />
+                whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.1 }}>
+                <a
+                  href={cert.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white rounded-2xl p-5 flex items-center gap-4 group hover:shadow-card-hover transition-shadow duration-300 block"
+                  style={{ border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 1px 2px rgba(0,0,0,0.03)" }}
+                >
+                  <div className="p-2.5 rounded-xl shrink-0 group-hover:bg-ink transition-all duration-200" style={{ background: "#F5F5F3", border: "1px solid rgba(0,0,0,0.07)" }}>
+                    <Icon size={14} className="text-text-secondary group-hover:text-gray-300 transition-colors duration-200" />
                   </div>
                   <div>
                     <div className="text-sm font-medium text-ink leading-tight">{cert.title}</div>
                     <div className="text-xs text-text-muted mt-0.5">{cert.issuer}</div>
                   </div>
-                </div>
+                </a>
               </motion.div>
             );
           })}
