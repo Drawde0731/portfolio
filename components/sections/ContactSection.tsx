@@ -6,293 +6,179 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Github, Linkedin, Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
-import GlowCard from "@/components/ui/GlowCard";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { cn } from "@/lib/utils";
 
 const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email"),
-  subject: z.enum([
-    "Web Development",
-    "Mobile App",
-    "API Integration",
-    "RPA/Automation",
-    "Other",
-  ] as const),
+  name:    z.string().min(2, "Name must be at least 2 characters"),
+  email:   z.string().email("Please enter a valid email"),
+  subject: z.enum(["Web Development","Mobile App","API Integration","RPA/Automation","Other"] as const),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
-
 type FormStatus = "idle" | "loading" | "success" | "error";
-
-const inputClass = cn(
-  "w-full px-4 py-3 rounded-xl text-sm font-medium",
-  "bg-surface border border-border-dark",
-  "text-foreground placeholder:text-muted/60",
-  "focus:outline-none focus:border-primary/60 focus:ring-1 focus:ring-primary/30",
-  "transition-all duration-200"
-);
 
 export default function ContactSection() {
   const [status, setStatus] = useState<FormStatus>("idle");
-
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema),
-  });
+  const { register, handleSubmit, reset, formState: { errors } } =
+    useForm<ContactFormData>({ resolver: zodResolver(contactSchema) });
 
   const onSubmit = async (data: ContactFormData) => {
     setStatus("loading");
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (!res.ok) throw new Error("Failed to send");
-      setStatus("success");
-      reset();
-    } catch {
-      setStatus("error");
-    }
+      const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
+      if (!res.ok) throw new Error();
+      setStatus("success"); reset();
+    } catch { setStatus("error"); }
+  };
+
+  const inputClass = cn(
+    "w-full px-4 py-3 rounded-xl text-sm font-light transition-all duration-200 outline-none",
+    "text-white placeholder-white/30",
+    "focus:outline-none"
+  );
+  const inputStyle = {
+    background: "rgba(255,255,255,0.07)",
+    border: "1px solid rgba(255,255,255,0.1)",
   };
 
   return (
-    <section id="contact" className="py-24 bg-background">
+    // DARK section
+    <section id="contact" className="py-28 section-dark" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="max-w-6xl mx-auto px-6">
-        <SectionHeader
-          eyebrow="Let's Connect"
-          title="Start a Project"
-          subtitle="Have a project in mind or looking to hire? Let's talk."
-        />
+        <SectionHeader eyebrow="Let's Connect" title="Start a Project"
+          subtitle="Have a project in mind or looking to hire? Let's talk." dark />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
           {/* Left — Contact info */}
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            <h3 className="text-lg font-semibold text-foreground mb-6">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.55 }}>
+
+            <p className="text-[10px] font-semibold tracking-[0.22em] uppercase mb-7" style={{ color: "rgba(255,255,255,0.4)" }}>
               Contact Information
-            </h3>
+            </p>
 
-            <div className="space-y-4 mb-8">
-              <a
-                href="mailto:johnedward1436@gmail.com"
-                className="flex items-center gap-3 text-sm text-muted hover:text-foreground transition-colors duration-200 group cursor-pointer"
-              >
-                <div className="p-2.5 rounded-lg bg-surface border border-border-dark group-hover:border-primary/40 transition-colors">
-                  <Mail size={16} className="text-primary" />
+            <div className="space-y-5 mb-9">
+              {[
+                { icon: Mail,    label: "johnedward1436@gmail.com", href: "mailto:johnedward1436@gmail.com" },
+                { icon: Phone,   label: "09477362471",              href: undefined },
+                { icon: MapPin,  label: "Bocaue, Bulacan, Philippines", href: undefined },
+              ].map(({ icon: Icon, label, href }) => (
+                <div key={label} className="flex items-center gap-4">
+                  <div className="p-2.5 rounded-xl shrink-0" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.1)" }}>
+                    <Icon size={14} style={{ color: "rgba(255,255,255,0.5)" }} />
+                  </div>
+                  {href
+                    ? <a href={href} className="text-sm font-light transition-colors duration-200" style={{ color: "rgba(255,255,255,0.6)" }} onMouseEnter={e => { (e.target as HTMLElement).style.color = "#fff"; }} onMouseLeave={e => { (e.target as HTMLElement).style.color = "rgba(255,255,255,0.6)"; }}>{label}</a>
+                    : <span className="text-sm font-light" style={{ color: "rgba(255,255,255,0.6)" }}>{label}</span>
+                  }
                 </div>
-                <span>johnedward1436@gmail.com</span>
-              </a>
-
-              <div className="flex items-center gap-3 text-sm text-muted">
-                <div className="p-2.5 rounded-lg bg-surface border border-border-dark">
-                  <Phone size={16} className="text-primary" />
-                </div>
-                <span>09477362471</span>
-              </div>
-
-              <div className="flex items-center gap-3 text-sm text-muted">
-                <div className="p-2.5 rounded-lg bg-surface border border-border-dark">
-                  <MapPin size={16} className="text-primary" />
-                </div>
-                <span>Bocaue, Bulacan, Philippines</span>
-              </div>
+              ))}
             </div>
 
-            {/* Socials */}
-            <div className="flex items-center gap-3 mb-8">
-              <a
-                href="https://github.com/Drawde0731"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="p-2.5 rounded-xl border border-border-dark text-muted hover:text-foreground hover:border-primary/40 transition-all duration-200 cursor-pointer"
-              >
-                <Github size={18} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/john-edward-complido-3b7b8b257/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="p-2.5 rounded-xl border border-border-dark text-muted hover:text-foreground hover:border-primary/40 transition-all duration-200 cursor-pointer"
-              >
-                <Linkedin size={18} />
-              </a>
-              <a
-                href="mailto:johnedward1436@gmail.com"
-                aria-label="Email"
-                className="p-2.5 rounded-xl border border-border-dark text-muted hover:text-foreground hover:border-primary/40 transition-all duration-200 cursor-pointer"
-              >
-                <Mail size={18} />
-              </a>
+            <div className="flex items-center gap-3 mb-9">
+              {[
+                { href: "https://github.com/Drawde0731", icon: Github, label: "GitHub" },
+                { href: "https://www.linkedin.com/in/john-edward-complido-3b7b8b257/", icon: Linkedin, label: "LinkedIn" },
+                { href: "mailto:johnedward1436@gmail.com", icon: Mail, label: "Email" },
+              ].map(({ href, icon: Icon, label }) => (
+                <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined} aria-label={label}
+                  className="p-2.5 rounded-xl transition-all duration-200"
+                  style={{ border: "1px solid rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.5)" }}
+                  onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.color = "#fff"; el.style.borderColor = "rgba(255,255,255,0.25)"; }}
+                  onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.color = "rgba(255,255,255,0.5)"; el.style.borderColor = "rgba(255,255,255,0.1)"; }}
+                >
+                  <Icon size={16} />
+                </a>
+              ))}
             </div>
 
-            <GlowCard className="p-4 flex items-center gap-3" glowColor="cyan">
-              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse shrink-0" />
-              <p className="text-sm text-muted">
-                Usually responds within{" "}
-                <span className="text-foreground font-medium">24 hours.</span>
+            <div className="flex items-center gap-3 p-4 rounded-2xl" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}>
+              <span className="w-2 h-2 rounded-full bg-green-400 shrink-0" />
+              <p className="text-sm font-light" style={{ color: "rgba(255,255,255,0.5)" }}>
+                Usually responds within <span className="text-white font-medium">24 hours.</span>
               </p>
-            </GlowCard>
+            </div>
           </motion.div>
 
           {/* Right — Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.55, delay: 0.1 }}>
+
             {status === "success" ? (
-              <GlowCard className="p-8 flex flex-col items-center text-center gap-4" glowColor="cyan">
-                <div className="p-4 rounded-full bg-green-500/10 border border-green-500/20">
-                  <CheckCircle2 size={32} className="text-green-400" />
+              <div className="rounded-2xl p-10 flex flex-col items-center text-center gap-5"
+                style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}>
+                <div className="p-4 rounded-full" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.1)" }}>
+                  <CheckCircle2 size={26} className="text-green-400" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">
-                    Message Sent!
-                  </h3>
-                  <p className="text-sm text-muted">
-                    I&apos;ll be in touch within 24 hours.
-                  </p>
+                  <h3 className="text-base font-semibold text-white mb-1.5">Message Sent!</h3>
+                  <p className="text-sm font-light" style={{ color: "rgba(255,255,255,0.5)" }}>I&apos;ll be in touch within 24 hours.</p>
                 </div>
-                <button
-                  onClick={() => setStatus("idle")}
-                  className="mt-2 text-sm text-primary hover:text-accent transition-colors cursor-pointer"
-                >
+                <button onClick={() => setStatus("idle")} className="text-sm transition-colors cursor-pointer" style={{ color: "rgba(255,255,255,0.4)" }} onMouseEnter={e => { (e.target as HTMLElement).style.color = "#fff"; }} onMouseLeave={e => { (e.target as HTMLElement).style.color = "rgba(255,255,255,0.4)"; }}>
                   Send another message
                 </button>
-              </GlowCard>
+              </div>
             ) : (
-              <GlowCard className="p-6">
-                <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-4">
-                  {/* Name */}
-                  <div>
-                    <label
-                      htmlFor="contact-name"
-                      className="block text-xs font-medium text-muted mb-1.5"
-                    >
-                      Name
-                    </label>
-                    <input
-                      id="contact-name"
-                      type="text"
-                      placeholder="Your name"
-                      className={inputClass}
-                      {...register("name")}
-                    />
-                    {errors.name && (
-                      <p className="mt-1.5 text-xs text-red-400">{errors.name.message}</p>
-                    )}
-                  </div>
+              <div className="rounded-2xl p-7" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
+                <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
+                  {[
+                    { id: "contact-name",    label: "Name",    type: "text",  placeholder: "Your name",       key: "name"  },
+                    { id: "contact-email",   label: "Email",   type: "email", placeholder: "your@email.com",  key: "email" },
+                  ].map(({ id, label, type, placeholder, key }) => (
+                    <div key={key}>
+                      <label htmlFor={id} className="block text-[10px] font-semibold uppercase tracking-[0.16em] mb-2" style={{ color: "rgba(255,255,255,0.4)" }}>{label}</label>
+                      <input id={id} type={type} placeholder={placeholder}
+                        className={inputClass} style={inputStyle}
+                        {...register(key as "name" | "email")}
+                      />
+                      {errors[key as "name" | "email"] && <p className="mt-1.5 text-xs text-red-400">{errors[key as "name" | "email"]?.message}</p>}
+                    </div>
+                  ))}
 
-                  {/* Email */}
                   <div>
-                    <label
-                      htmlFor="contact-email"
-                      className="block text-xs font-medium text-muted mb-1.5"
-                    >
-                      Email
-                    </label>
-                    <input
-                      id="contact-email"
-                      type="email"
-                      placeholder="your@email.com"
-                      className={inputClass}
-                      {...register("email")}
-                    />
-                    {errors.email && (
-                      <p className="mt-1.5 text-xs text-red-400">{errors.email.message}</p>
-                    )}
-                  </div>
-
-                  {/* Subject */}
-                  <div>
-                    <label
-                      htmlFor="contact-subject"
-                      className="block text-xs font-medium text-muted mb-1.5"
-                    >
-                      Subject
-                    </label>
-                    <select
-                      id="contact-subject"
-                      className={cn(inputClass, "cursor-pointer")}
+                    <label htmlFor="contact-subject" className="block text-[10px] font-semibold uppercase tracking-[0.16em] mb-2" style={{ color: "rgba(255,255,255,0.4)" }}>Subject</label>
+                    <select id="contact-subject" className={cn(inputClass, "cursor-pointer")} style={inputStyle}
                       {...register("subject")}
                     >
-                      <option value="" disabled>
-                        Select a subject
-                      </option>
-                      <option value="Web Development">Web Development</option>
-                      <option value="Mobile App">Mobile App</option>
-                      <option value="API Integration">API Integration</option>
-                      <option value="RPA/Automation">RPA/Automation</option>
-                      <option value="Other">Other</option>
+                      <option value="" disabled style={{ background: "#1A1A1A" }}>Select a subject</option>
+                      {["Web Development","Mobile App","API Integration","RPA/Automation","Other"].map(v => (
+                        <option key={v} value={v} style={{ background: "#1A1A1A" }}>{v}</option>
+                      ))}
                     </select>
-                    {errors.subject && (
-                      <p className="mt-1.5 text-xs text-red-400">{errors.subject.message}</p>
-                    )}
+                    {errors.subject && <p className="mt-1.5 text-xs text-red-400">{errors.subject.message}</p>}
                   </div>
 
-                  {/* Message */}
                   <div>
-                    <label
-                      htmlFor="contact-message"
-                      className="block text-xs font-medium text-muted mb-1.5"
-                    >
-                      Message
-                    </label>
-                    <textarea
-                      id="contact-message"
-                      rows={4}
-                      placeholder="Tell me about your project..."
-                      className={cn(inputClass, "resize-none")}
+                    <label htmlFor="contact-message" className="block text-[10px] font-semibold uppercase tracking-[0.16em] mb-2" style={{ color: "rgba(255,255,255,0.4)" }}>Message</label>
+                    <textarea id="contact-message" rows={4} placeholder="Tell me about your project..."
+                      className={cn(inputClass, "resize-none")} style={inputStyle}
                       {...register("message")}
                     />
-                    {errors.message && (
-                      <p className="mt-1.5 text-xs text-red-400">{errors.message.message}</p>
-                    )}
+                    {errors.message && <p className="mt-1.5 text-xs text-red-400">{errors.message.message}</p>}
                   </div>
 
-                  {/* Error state */}
                   {status === "error" && (
-                    <div className="flex items-center gap-2 p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                    <div className="flex items-center gap-2 p-3.5 rounded-xl text-red-400 text-sm"
+                      style={{ background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.2)" }}>
                       <AlertCircle size={14} className="shrink-0" />
                       Something went wrong. Please try again.
                     </div>
                   )}
 
-                  {/* Submit */}
-                  <button
-                    type="submit"
-                    disabled={status === "loading"}
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold bg-primary hover:bg-primary/90 disabled:bg-primary/60 text-white rounded-xl transition-all duration-200 cursor-pointer disabled:cursor-not-allowed shadow-[0_0_20px_rgba(99,102,241,0.3)] hover:shadow-[0_0_30px_rgba(99,102,241,0.5)]"
+                  <button type="submit" disabled={status === "loading"}
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-medium bg-white text-ink rounded-full hover:opacity-85 disabled:opacity-40 transition-opacity duration-200 cursor-pointer disabled:cursor-not-allowed"
                   >
-                    {status === "loading" ? (
-                      <>
-                        <Loader2 size={16} className="animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <Send size={15} />
-                        Send Message
-                      </>
-                    )}
+                    {status === "loading"
+                      ? <><Loader2 size={14} className="animate-spin" /> Sending...</>
+                      : <><Send size={13} /> Send Message</>
+                    }
                   </button>
                 </form>
-              </GlowCard>
+              </div>
             )}
           </motion.div>
         </div>

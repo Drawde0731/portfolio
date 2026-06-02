@@ -41,7 +41,7 @@ export const PROJECTS = [
   },
   {
     id: "hris-system",
-    title: "HRIS System",
+    title: "HRIS",
     category: "Enterprise Web App",
     description:
       "Human Resource Information System featuring employee management, attendance tracking, payroll processing, and multi-role access control.",
@@ -54,7 +54,7 @@ export const PROJECTS = [
   },
   {
     id: "ai-chatbot",
-    title: "AI Chatbot — Hackathon",
+    title: "AI Chatbot Hackathon",
     category: "AI / Web App",
     description:
       "Conversational AI chatbot built and shipped in 72 hours during a company hackathon. Integrated NLP APIs with a custom React frontend.",

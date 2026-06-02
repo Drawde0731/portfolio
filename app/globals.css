@@ -2,120 +2,97 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Base ── */
 :root {
-  --background: #050508;
-  --foreground: #F8FAFC;
+  --sand:   #F5F5F3;
+  --white:  #FFFFFF;
+  --ink:    #111111;
+  --border: rgba(0,0,0,0.08);
 }
 
-html {
-  scroll-behavior: smooth;
-  background-color: #050508;
-}
+html { scroll-behavior: smooth; background-color: #F5F5F3; }
 
 body {
-  background-color: #050508;
-  color: #F8FAFC;
-  font-family: var(--font-inter), system-ui, sans-serif;
+  background-color: #F5F5F3;
+  color: #111111;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #050508;
-}
-::-webkit-scrollbar-thumb {
-  background: #1A1A2E;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #6366F1;
+/* ── Scrollbar ── */
+::-webkit-scrollbar        { width: 5px; }
+::-webkit-scrollbar-track  { background: #F5F5F3; }
+::-webkit-scrollbar-thumb  { background: rgba(0,0,0,0.15); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.3); }
+
+/* ── Selection ── */
+::selection { background: #111111; color: #FFFFFF; }
+
+/* ── Terminal cursor ── */
+@keyframes cursorBlink { 0%,100% { opacity:1; } 50% { opacity:0; } }
+.cursor-blink { animation: cursorBlink 1s step-end infinite; }
+
+/* ── Keyboard key — physical dark keycap ── */
+.key-cap {
+  background: #1E1E1E;
+  border: 1px solid #333333;
+  box-shadow: 0 3px 0 #000, 0 4px 10px rgba(0,0,0,0.5);
+  border-radius: 7px;
+  color: rgba(255,255,255,0.5);
 }
 
-/* Selection */
-::selection {
-  background: #6366F1;
-  color: white;
+/* ── Polaroid card ── */
+.polaroid {
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08);
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+.polaroid:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+  transform: translateY(-4px) rotate(0deg) !important;
 }
 
-/* Dot grid background utility */
-.dot-grid {
-  background-image: radial-gradient(circle, #1A1A2E 1px, transparent 1px);
-  background-size: 32px 32px;
-}
+/* Polaroid slight rotation for even/odd cards */
+.polaroid-tilt-right { transform: rotate(1deg); }
+.polaroid-tilt-left  { transform: rotate(-1deg); }
 
-/* Glow utilities */
-.glow-indigo {
-  box-shadow: 0 0 40px rgba(99, 102, 241, 0.2);
-}
-.glow-cyan {
-  box-shadow: 0 0 40px rgba(34, 211, 238, 0.2);
-}
-.text-glow {
-  text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
-}
-.text-glow-cyan {
-  text-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
-}
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #6366F1, #22D3EE);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
+/* ── Navbar — frosted sand ── */
 @layer utilities {
-  .glass {
-    background: rgba(13, 13, 18, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(26, 26, 46, 0.8);
+  .nav-glass {
+    background: rgba(245,245,243,0.88);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-bottom: 1px solid rgba(0,0,0,0.07);
   }
-
-  .glass-strong {
-    background: rgba(13, 13, 18, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(26, 26, 46, 1);
+  /* Navbar on dark hero */
+  .nav-glass-dark {
+    background: rgba(17,17,17,0.85);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
   }
 }
 
-/* Animated gradient border */
-@keyframes border-glow {
-  0%, 100% { border-color: rgba(99, 102, 241, 0.3); }
-  50% { border-color: rgba(34, 211, 238, 0.3); }
-}
+/* ── Section utility classes ── */
+.section-light  { background-color: #F5F5F3; }
+.section-white  { background-color: #FFFFFF; }
+.section-dark   { background-color: #111111; color: #FFFFFF; }
+.section-dark-2 { background-color: #1A1A1A; color: #FFFFFF; }
 
-.border-animate {
-  animation: border-glow 3s ease-in-out infinite;
-}
+/* ── Dark section text helpers ── */
+.section-dark  .text-muted,
+.section-dark-2 .text-muted { color: rgba(255,255,255,0.55) !important; }
 
-/* Terminal cursor blink */
-@keyframes cursor-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
+/* ── Dividers ── */
+.divider-light { border-top: 1px solid rgba(0,0,0,0.07); }
+.divider-dark  { border-top: 1px solid rgba(255,255,255,0.07); }
 
-.cursor-blink {
-  animation: cursor-blink 1s step-end infinite;
-}
-
-/* Reduced motion */
+/* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-
-  html {
-    scroll-behavior: auto;
-  }
+  html { scroll-behavior: auto; }
 }

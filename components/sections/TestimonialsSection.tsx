@@ -1,16 +1,9 @@
 import { Quote, Mail } from "lucide-react";
-import GlowCard from "@/components/ui/GlowCard";
 import SectionHeader from "@/components/ui/SectionHeader";
-
-const PLACEHOLDERS = [
-  { id: 1 },
-  { id: 2 },
-  { id: 3 },
-];
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-24 bg-surface">
+    <section id="testimonials" className="py-28 section-white" style={{ borderTop: "1px solid rgba(0,0,0,0.07)" }}>
       <div className="max-w-6xl mx-auto px-6">
         <SectionHeader
           eyebrow="Social Proof"
@@ -18,31 +11,30 @@ export default function TestimonialsSection() {
           subtitle="Collecting feedback from collaborators and clients. Check back soon."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
-          {PLACEHOLDERS.map(({ id }) => (
-            <GlowCard
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+          {[1, 2, 3].map((id) => (
+            <div
               key={id}
-              className="p-8 flex flex-col items-center text-center"
-              style={{ borderStyle: "dashed" } as React.CSSProperties}
+              className="rounded-2xl p-8 flex flex-col items-center text-center"
+              style={{ background: "#F5F5F3", border: "1px dashed rgba(0,0,0,0.12)" }}
             >
-              <Quote size={40} className="text-foreground/10 mb-4" />
-              <p className="text-sm text-muted italic mb-6">
-                Testimonial coming soon.
-              </p>
-              <div className="w-10 h-10 rounded-full border border-dashed border-border-dark" />
-            </GlowCard>
+              <Quote size={28} className="mb-4" style={{ color: "rgba(0,0,0,0.1)" }} />
+              <p className="text-sm text-text-muted italic mb-6 font-light">Testimonial coming soon.</p>
+              <div className="w-10 h-10 rounded-full" style={{ border: "1px dashed rgba(0,0,0,0.12)" }} />
+            </div>
           ))}
         </div>
 
         <div className="text-center">
-          <p className="text-sm text-muted mb-4">
+          <p className="text-sm text-text-muted mb-5 font-light">
             Have you worked with me? I&apos;d love to feature your feedback.
           </p>
           <a
-            href="mailto:johnedward1436@gmail.com?subject=Testimonial for JE Complido"
-            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium border border-border-dark hover:border-primary/40 text-muted hover:text-foreground rounded-xl transition-all duration-200 cursor-pointer"
+            href="mailto:johnedward1436@gmail.com?subject=Testimonial for Drawde"
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full transition-all duration-200 text-text-secondary hover:text-ink hover:border-black/30"
+            style={{ border: "1px solid rgba(0,0,0,0.12)" }}
           >
-            <Mail size={15} />
+            <Mail size={13} />
             Submit Testimonial
           </a>
         </div>

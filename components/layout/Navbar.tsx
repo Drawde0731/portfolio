@@ -7,21 +7,23 @@ import { NAV_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled]     = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  // Hero is dark — nav text starts light, then shifts when past hero
+  const [pastHero, setPastHero]     = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+      // Hero is ~100vh tall
+      setPastHero(window.scrollY > window.innerHeight * 0.8);
+    };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const SECTION_OFFSETS: Record<string, number> = {
-    about:      80,   
-    skills:     50,
-    projects:   20,
-    services:   10,
-    contact:    10,
+    about: 50, skills: 50, projects: 10, services: 0, contact: 50,
   };
 
   const scrollTo = (href: string) => {
@@ -34,32 +36,44 @@ export default function Navbar() {
     }
   };
 
+  const isLight = pastHero && scrolled;
+
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "glass-strong shadow-lg shadow-black/20"
+          ? isLight ? "nav-glass" : "nav-glass-dark"
           : "bg-transparent"
       )}
     >
-      <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <nav className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
         {/* Logo */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="font-mono font-bold text-xl text-primary tracking-tight hover:text-accent transition-colors duration-200 cursor-pointer"
+          className={cn(
+            "font-semibold text-base tracking-tight transition-all duration-300 cursor-pointer",
+            isLight
+              ? "text-ink hover:opacity-60"
+              : "text-white hover:opacity-60"
+          )}
           aria-label="Go to top"
         >
-          Drawde<span className="text-accent">.</span>
+          Drawde<span className="opacity-40">.</span>
         </button>
 
         {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-1">
+        <ul className="hidden md:flex items-center gap-0.5">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <button
                 onClick={() => scrollTo(link.href)}
-                className="px-4 py-2 text-sm font-medium rounded-lg text-muted hover:text-foreground hover:bg-white/5 transition-all duration-200 cursor-pointer"
+                className={cn(
+                  "px-4 py-2 text-sm rounded-lg transition-colors duration-200 cursor-pointer",
+                  isLight
+                    ? "text-text-secondary hover:text-ink"
+                    : "text-text-light-muted hover:text-white"
+                )}
               >
                 {link.label}
               </button>
@@ -68,22 +82,30 @@ export default function Navbar() {
         </ul>
 
         {/* CTA */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex">
           <button
             onClick={() => scrollTo("#contact")}
-            className="px-4 py-2 text-sm font-medium bg-primary hover:bg-primary/90 text-white rounded-lg transition-all duration-200 cursor-pointer shadow-[0_0_20px_rgba(99,102,241,0.3)] hover:shadow-[0_0_30px_rgba(99,102,241,0.5)]"
+            className={cn(
+              "px-5 py-2 text-sm font-medium rounded-full transition-all duration-200 cursor-pointer",
+              isLight
+                ? "bg-ink text-white hover:opacity-80"
+                : "bg-white text-ink hover:opacity-80"
+            )}
           >
             Hire Me
           </button>
         </div>
 
-        {/* Mobile hamburger */}
+        {/* Hamburger */}
         <button
           onClick={() => setMobileOpen((v) => !v)}
-          className="md:hidden p-2 text-muted hover:text-foreground transition-colors cursor-pointer"
+          className={cn(
+            "md:hidden p-2 transition-colors cursor-pointer",
+            isLight ? "text-text-secondary" : "text-text-light-muted"
+          )}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
-          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </nav>
 
@@ -94,24 +116,35 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="md:hidden glass-strong border-t border-border-dark overflow-hidden"
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            className={cn(
+              "md:hidden overflow-hidden border-t",
+              isLight
+                ? "nav-glass border-black/[0.07]"
+                : "nav-glass-dark border-white/[0.07]"
+            )}
           >
-            <ul className="flex flex-col px-4 py-4 gap-1">
+            <ul className="flex flex-col px-4 py-3 gap-0.5">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <button
                     onClick={() => scrollTo(link.href)}
-                    className="w-full text-left px-4 py-3 text-sm font-medium text-muted hover:text-foreground hover:bg-white/5 rounded-lg transition-all duration-200 cursor-pointer"
+                    className={cn(
+                      "w-full text-left px-4 py-3 text-sm rounded-lg transition-colors duration-200 cursor-pointer",
+                      isLight ? "text-text-secondary hover:text-ink" : "text-text-light-muted hover:text-white"
+                    )}
                   >
                     {link.label}
                   </button>
                 </li>
               ))}
-              <li className="pt-2">
+              <li className="pt-2 pb-1">
                 <button
                   onClick={() => scrollTo("#contact")}
-                  className="w-full px-4 py-3 text-sm font-medium bg-primary hover:bg-primary/90 text-white rounded-lg transition-all duration-200 cursor-pointer"
+                  className={cn(
+                    "w-full px-4 py-3 text-sm font-medium rounded-full transition-opacity hover:opacity-80 cursor-pointer",
+                    isLight ? "bg-ink text-white" : "bg-white text-ink"
+                  )}
                 >
                   Hire Me
                 </button>

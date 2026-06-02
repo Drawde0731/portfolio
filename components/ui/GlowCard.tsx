@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { HTMLAttributes } from "react";
 
 interface GlowCardProps extends HTMLAttributes<HTMLDivElement> {
-  glowColor?: "indigo" | "cyan";
+  glowColor?: "default" | "subtle";
   children: React.ReactNode;
   className?: string;
 }
@@ -12,19 +12,15 @@ interface GlowCardProps extends HTMLAttributes<HTMLDivElement> {
 export default function GlowCard({
   children,
   className,
-  glowColor = "indigo",
+  glowColor = "default",
   ...props
 }: GlowCardProps) {
-  const glowStyles =
-    glowColor === "cyan"
-      ? "hover:border-[rgba(34,211,238,0.4)] hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]"
-      : "hover:border-[rgba(99,102,241,0.4)] hover:shadow-[0_0_30px_rgba(99,102,241,0.15)]";
-
   return (
     <div
       className={cn(
-        "bg-surface border border-border-dark rounded-xl transition-all duration-300",
-        glowStyles,
+        "bg-surface border border-border-subtle rounded-2xl",
+        "shadow-card hover:shadow-card-hover",
+        "transition-all duration-300",
         className
       )}
       {...props}
