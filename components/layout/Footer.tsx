@@ -66,7 +66,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <p className="text-xs text-center" style={{ color: "rgba(255,255,255,0.3)" }}>
-            © 2026 Drawde. Built with Next.js.
+            © 2026 Drawde. All rights reserved.
           </p>
         </div>
       </div>
