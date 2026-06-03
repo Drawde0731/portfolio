@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 // ─── Keyboard Keys ────────────────────────────────────────────────────────────
 
-const KEYS = ["ESC", "TAB", "⌘", "⇧", "↑", "↓", "←", "→"];
+const KEYS = ["ESC", "E", "SHIFT", "D", "TAB", "A", "W", "E"];
 
 const KEY_POSITIONS = [
   { top: "15%",  left: "6%",   delay: 0   },
