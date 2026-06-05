@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description:
       "Software engineer specializing in React, Next.js, Flutter, and React Native. Building production-ready web and mobile applications across any platform.",
     type: "website",
-    url: "https://jecomplido.dev",
+    url: "https://drawde-portfolio.vercel.app",
     siteName: "Drawde Portfolio",
   },
   twitter: {
@@ -63,6 +63,25 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+
+        {/* Dify chatbot — exact same as their HTML embed snippet */}
+        {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.difyChatbotConfig = {
+                token: 'ExKbWXcIrLCP0fZt',
+                userVariables: { name: 'Drawde' }
+              };
+            `,
+          }}
+        />
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script
+          src="https://udify.app/embed.min.js"
+          id="NST9dCAAREUxxD4A"
+          defer
+        />
       </body>
     </html>
   );

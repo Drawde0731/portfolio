@@ -87,6 +87,37 @@ body {
 .divider-light { border-top: 1px solid rgba(0,0,0,0.07); }
 .divider-dark  { border-top: 1px solid rgba(255,255,255,0.07); }
 
+/* ── Dify Chatbot ── */
+/* Force fixed positioning — Framer Motion transforms on parents break position:fixed */
+#dify-chatbot-bubble-button {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  z-index: 99999 !important;
+  background-color: #111111 !important;
+  background-image: url('/icon.png') !important;
+  background-size: 100% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border: none !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
+  transform: none !important;
+  will-change: auto !important;
+}
+#dify-chatbot-bubble-button:hover {
+  box-shadow: 0 6px 28px rgba(0,0,0,0.4) !important;
+}
+#dify-chatbot-bubble-window {
+  position: fixed !important;
+  bottom: 90px !important;
+  right: 24px !important;
+  z-index: 99998 !important;
+  width: 24rem !important;
+  height: 40rem !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.15) !important;
+}
+
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
