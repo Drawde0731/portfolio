@@ -27,56 +27,48 @@ export const SKILLS = {
 
 export const PROJECTS = [
   {
-    id: "insurance-platform",
-    title: "Insurance Management Platform",
-    category: "Web Application",
+    id: "snap-and-pose",
+    title: "Snap and Pose",
+    category: "Photo / Web App",
     description:
-      "End-to-end insurance management system with policy tracking, claims processing, and real-time dashboards for administrators and clients.",
-    problem:
-      "Manual insurance workflows causing delays in policy management and claims processing.",
-    solution:
-      "Built a full-stack web application with role-based access, real-time data, and automated workflow triggers.",
-    tech: ["React", "Next.js", "Node.js", "MongoDB", "REST APIs"],
-    highlight: "Production system handling real insurance workflows at scale",
+      "Open your browser, hit the shutter, and walk away with a photo strip and animated GIFs from your webcam. No installs, no sign-ups. Timestamped downloads and a retry button if the first take wasn't the one.",
+    highlight: "Photo strips and GIF export, straight from the browser",
+    tech: ["Next.js", "Tailwind CSS", "ShadCN UI"],
+    liveUrl: "https://photobooth-app-delta.vercel.app/",
+    repoUrl: "https://github.com/Drawde0731/photobooth-app",
   },
   {
-    id: "hris-system",
-    title: "HRIS",
-    category: "Enterprise Web App",
+    id: "next-day",
+    title: "Next Day",
+    category: "Fun / Web App",
     description:
-      "Human Resource Information System featuring employee management, attendance tracking, payroll processing, and multi-role access control.",
-    problem:
-      "Manual HR processes across spreadsheets leading to data inconsistency and slow reporting.",
-    solution:
-      "Developed a centralized HRIS with role-based dashboards, automated payroll logic, and real-time attendance tracking.",
-    tech: ["Vue.js", "Node.js", "MongoDB", "Firebase"],
-    highlight: "Multi-role enterprise system managing employee lifecycle",
+      "A little fun app that predicts what tomorrow looks like for you, riding off the TikTok trend wave. The real highlight is the loader and the overall feel of it. Light and dark mode, clean ShadCN components, and an intro that actually makes you want to stick around.",
+    highlight: "Built for the vibe. The loader alone is worth the visit.",
+    tech: ["Next.js", "ShadCN UI", "Tailwind CSS", "TypeScript"],
+    liveUrl: "https://next-day-peach.vercel.app/",
+    repoUrl: "https://github.com/Drawde0731/next-day",
   },
   {
-    id: "ai-chatbot",
-    title: "AI Chatbot Hackathon",
-    category: "AI / Web App",
+    id: "jeepney-fare-calculator",
+    title: "Jeepney Fare Calculator",
+    category: "Non Official Guide / Web App",
     description:
-      "Conversational AI chatbot built and shipped in 72 hours during a company hackathon. Integrated NLP APIs with a custom React frontend.",
-    problem:
-      "Customer support overloaded with repetitive queries requiring fast automated responses.",
-    solution:
-      "Rapidly built an NLP-powered chatbot with a clean chat interface, context tracking, and seamless API integration.",
-    tech: ["React", "Node.js", "REST APIs", "TypeScript"],
-    highlight: "Built in 72 hours. Shipped to production.",
+      "Pulls today's national average diesel price and runs it through LTFRB fare structures to give you a live fare matrix for Philippine jeepneys. Drag the fuel slider and everything recalculates on the spot. Export as PDF or install it as a PWA and use it offline.",
+    highlight: "Real diesel prices, real LTFRB math, works offline as a PWA",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Chart.js"],
+    liveUrl: "https://jeepney-fare-calculator.vercel.app/",
+    repoUrl: "https://github.com/Drawde0731/jeepney-fare-calculator",
   },
   {
-    id: "queue-management",
-    title: "Queue Management System",
-    category: "Real-Time Application",
+    id: "brewde",
+    title: "Brewde",
+    category: "Retail & POS Management System",
     description:
-      "Real-time queue and ticketing system managing customer flow with live status boards, ticket generation, and admin controls.",
-    problem:
-      "Physical queues creating poor customer experience and inefficient staff allocation.",
-    solution:
-      "Built a real-time queue system with Firebase live sync, digital ticket generation, and a staff management dashboard.",
-    tech: ["React Native", "Firebase", "Node.js"],
-    highlight: "Real-time sync across all devices with zero latency",
+      "Built this for a friend who was starting a coffee brand and needed a way to manage orders and track sales. Ended up building a full multi-tenant system with merchant onboarding, a POS with cart and checkout, PWD/Senior discounts, a sales dashboard, and separate roles for Admins, Owners, and Cashiers.",
+    highlight: "Multi-tenant cafe system built for a real, growing coffee brand",
+    tech: ["Next.js", "Supabase", "TypeScript", "Tailwind CSS"],
+    liveUrl: "https://brewde.vercel.app/",
+    repoUrl: "https://github.com/Drawde0731/Brewde",
   },
 ];
 
