@@ -87,7 +87,7 @@ export default function ProjectsSection() {
                       <ExternalLink size={12} />
                       Live Site
                     </a>
-                    <span className="text-text-muted text-xs">·</span>
+                    {/* <span className="text-text-muted text-xs">·</span>
                     <a
                       href={project.repoUrl}
                       target="_blank"
@@ -96,7 +96,7 @@ export default function ProjectsSection() {
                     >
                       <Github size={12} />
                       Source
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>
