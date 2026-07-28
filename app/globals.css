@@ -28,18 +28,6 @@ body {
 /* ── Selection ── */
 ::selection { background: #111111; color: #FFFFFF; }
 
-/* ── Terminal cursor ── */
-@keyframes cursorBlink { 0%,100% { opacity:1; } 50% { opacity:0; } }
-.cursor-blink { animation: cursorBlink 1s step-end infinite; }
-
-/* ── Keyboard key — physical dark keycap ── */
-.key-cap {
-  background: #1E1E1E;
-  border: 1px solid #333333;
-  box-shadow: 0 3px 0 #000, 0 4px 10px rgba(0,0,0,0.5);
-  border-radius: 7px;
-  color: rgba(255,255,255,0.5);
-}
 
 /* ── Polaroid card ── */
 .polaroid {
