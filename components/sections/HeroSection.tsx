@@ -2,6 +2,20 @@
 
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import dynamic from "next/dynamic";
+
+const KeyboardScene = dynamic(
+  () => import("@/components/three/KeyboardScene"),
+  {
+    ssr: false,
+    loading: () => (
+      <div
+        className="w-full h-full"
+        style={{ background: "rgba(255,255,255,0.015)", borderRadius: "8px" }}
+      />
+    ),
+  }
+);
 
 const FADE_UP = (delay: number) => ({
   initial: { opacity: 0, y: 20 },
@@ -153,8 +167,15 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* ── Right: 3D canvas placeholder (wired in Task 3) ── */}
-        <div className="hidden lg:block h-screen" />
+        {/* ── Right: 3D canvas ── */}
+        <motion.div
+          className="hidden lg:block h-screen relative"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.35, duration: 0.8 }}
+        >
+          <KeyboardScene />
+        </motion.div>
       </div>
 
       {/* Scroll hint */}
