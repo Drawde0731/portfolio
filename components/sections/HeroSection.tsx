@@ -46,7 +46,7 @@ export default function HeroSection() {
         <div className="flex flex-col gap-7 py-28 lg:py-0">
 
           {/* Status badge */}
-          <motion.div {...FADE_UP(0.10)}>
+          {/* <motion.div {...FADE_UP(0.10)}>
             <span
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs"
               style={{
@@ -58,7 +58,7 @@ export default function HeroSection() {
               <span className="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0" />
               Status: Spraying Insecticide to Prod
             </span>
-          </motion.div>
+          </motion.div> */}
 
           {/* Name */}
           <motion.div {...FADE_UP(0.25)}>
@@ -179,7 +179,7 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll hint */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.0, duration: 0.6 }}
@@ -195,7 +195,7 @@ export default function HeroSection() {
         >
           <ChevronDown size={15} />
         </motion.div>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }
