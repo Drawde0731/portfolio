@@ -2,7 +2,7 @@
   { label: "About",      href: "#about"      },
   { label: "Experience", href: "#experience" },
   { label: "Projects",   href: "#projects"   },
-  { label: "Services",   href: "#services"   },
+  { label: "Skills",     href: "#skills"     },
   { label: "Contact",    href: "#contact"    },
 ];
 
@@ -53,54 +53,34 @@ export const PROJECTS = [
   },
 ];
 
-export const SERVICES = [
+export const SKILLS = [
   {
     icon: "Code2",
     title: "Full Stack Web Development",
     description:
-      "React, Next.js, and Node.js across the whole stack. I've shipped insurance platforms, HRIS tools, real-time dashboards, and a multi-tenant POS system. The scope doesn't intimidate me.",
-    features: [
-      "UI/UX implementation from Figma",
-      "REST API development & integration",
-      "Database design & management",
-      "Performance & SEO optimization",
-    ],
+      "React, Next.js, and Node.js across the whole stack. I've shipped insurance platforms, HRIS tools, real-time dashboards, and a multi-tenant POS system.",
+    tags: ["Next.js", "React", "Vue.js", "Node.js", "TypeScript", "Tailwind CSS", "MongoDB", "Supabase", "Django", "REST API"],
   },
   {
     icon: "Smartphone",
-    title: "Cross-Platform Mobile Apps",
+    title: "Cross-Platform Mobile",
     description:
-      "Flutter and React Native, one codebase for iOS and Android. I've built queue management apps, event apps, and blockchain frontends. The experience is consistent on both platforms.",
-    features: [
-      "Flutter app development",
-      "React Native apps",
-      "API & backend integration",
-      "App Store & Play Store deployment",
-    ],
+      "Flutter and React Native for iOS and Android. I've built queue management apps, event apps, and blockchain frontends with consistent UX on both platforms.",
+    tags: ["Flutter", "React Native", "Expo", "Dart", "Firebase", "Play Store", "App Store"],
   },
   {
     icon: "Brain",
     title: "AI Integration & Fine-Tuning",
     description:
-      "Building AI-powered features and fine-tuning models for real use cases. I use Google Colab for training and experimentation, and Dify to wire AI into products as chatbots and multi-step workflows.",
-    features: [
-      "LLM fine-tuning via Google Colab",
-      "AI chatbot development with Dify",
-      "Multi-step AI workflow design",
-      "AI feature integration into apps",
-    ],
+      "Building AI-powered features and fine-tuning models for real use cases. Chatbots, multi-step AI workflows, and model experimentation via Google Colab and Dify.",
+    tags: ["Dify", "Google Colab", "Python", "OpenAI API", "Hugging Face", "LangChain", "RAG"],
   },
   {
     icon: "Zap",
     title: "Workflow Automation",
     description:
-      "Automating repetitive business processes so they run without people in the loop. From n8n pipelines to certified UIPath and IBM RPA, I've automated loan processing, insurance claims, and ordering systems.",
-    features: [
-      "n8n workflow automation",
-      "UIPath & IBM RPA (certified)",
-      "AI-powered process automation",
-      "System and API orchestration",
-    ],
+      "Automating business processes end to end. From n8n pipelines to certified UIPath and IBM RPA, I've automated loan processing, insurance claims, and ordering systems.",
+    tags: ["n8n", "UIPath", "IBM RPA", "Webhook", "REST API", "Agentic AI"],
   },
 ];
 

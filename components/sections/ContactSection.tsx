@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Loader2, CheckCircle2 } from "lucide-react";
 
 const contactSchema = z.object({
@@ -70,12 +69,7 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
 
           {/* ── Left: form ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55 }}
-          >
+          <div>
             {status === "success" ? (
               <div className="flex flex-col gap-5 pt-4">
                 <CheckCircle2 size={32} className="text-ink" />
@@ -171,16 +165,10 @@ export default function ContactSection() {
                 </div>
               </form>
             )}
-          </motion.div>
+          </div>
 
           {/* ── Right: headline + info ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, delay: 0.1 }}
-            className="flex flex-col gap-6"
-          >
+          <div className="flex flex-col gap-6">
             <h2
               className="font-bold text-ink leading-[1.05] tracking-tight"
               style={{ fontSize: "clamp(2.4rem, 5vw, 3.8rem)" }}
@@ -207,7 +195,7 @@ export default function ContactSection() {
               </a>
               <span className="text-base font-bold text-ink">09477362471</span>
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>

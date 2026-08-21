@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { PROJECTS } from "@/lib/constants";
 
@@ -14,13 +13,7 @@ export default function ProjectsSection() {
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
-          className="mb-16"
-        >
+        <div className="mb-16">
           <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-4 text-text-muted">
             Portfolio
           </p>
@@ -33,18 +26,12 @@ export default function ProjectsSection() {
           <p className="mt-4 text-base font-light text-text-secondary max-w-lg">
             Personal projects built for fun, for friends, and for real people.
           </p>
-        </motion.div>
+        </div>
 
         {/* Numbered project list */}
         <div>
           {PROJECTS.map((project, i) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-            >
+            <div key={project.id}>
               {i > 0 && <div className="h-px" style={{ background: "rgba(0,0,0,0.07)" }} />}
 
               <div className="py-10 grid grid-cols-1 lg:grid-cols-[6rem_1fr] gap-5 lg:gap-10 items-start group">
@@ -56,6 +43,7 @@ export default function ProjectsSection() {
                     fontSize: "clamp(2.8rem, 5vw, 4.5rem)",
                     color: "#111111",
                     letterSpacing: "-0.04em",
+                    opacity: 0.15,
                   }}
                 >
                   {String(i + 1).padStart(2, "0")}
@@ -92,7 +80,6 @@ export default function ProjectsSection() {
                     </p>
                   )}
 
-                  {/* Tech tags */}
                   <div className="flex flex-wrap gap-1.5">
                     {project.tech.map((t: string) => (
                       <span key={t}
@@ -104,7 +91,7 @@ export default function ProjectsSection() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

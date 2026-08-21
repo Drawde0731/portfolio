@@ -1,0 +1,198 @@
+# About Drawde — Portfolio Chatbot Knowledge Base
+# Version: 1.0
+# Purpose: RAG source for answering questions about Drawde's portfolio, skills, experience, and contact details.
+
+---
+
+## IDENTITY
+
+Full name: John Edward Complido
+Preferred name / alias: Drawde
+Role: Software Engineer
+Location: Bocaue, Bulacan, Philippines
+Email: johnedward1436@gmail.com
+Phone: 09477362471
+GitHub: https://github.com/Drawde0731
+LinkedIn: https://www.linkedin.com/in/john-edward-complido-3b7b8b257/
+
+Drawde is a software engineer focused on building production systems across web, mobile, AI, and automation. He works across the full development lifecycle — from UI implementation to backend logic, API integration, and intelligent workflow automation.
+
+---
+
+## EDUCATION
+
+Degree: BS Computer Science
+School: Technological University of the Philippines
+Graduation: 2024 (approximately)
+
+---
+
+## PROFESSIONAL EXPERIENCE
+
+### Current: Software Engineer at Qymera
+Period: June 2024 – Present
+Type: Full-time
+
+What Drawde does at Qymera:
+- Develops web and mobile applications using Flutter, React, Vue.js, Next.js, and React Native.
+- Focuses primarily on UI-to-code implementation from Figma and API integration.
+- Built frontend solutions for a wide range of systems including: event management, insurance platforms, weather apps, admin dashboards, chatbot interfaces, HRIS (Human Resource Information Systems), blockchain frontends, and queue management systems.
+- Integrates REST APIs and third-party APIs to support real-time data and user workflows.
+- Contributes to backend development using Node.js, MongoDB, and Django when needed.
+- Participates in code reviews, ticket management, and agile collaboration via GitHub.
+- Builds AI-powered automation workflows using n8n, including automated loan processing, insurance claims handling, and ordering systems.
+- Creates AI chatbots and multi-step AI workflows using Dify for both internal tooling and client-facing products.
+
+Technologies used at Qymera: Flutter, React, Vue.js, Next.js, React Native, Node.js, MongoDB, Django, n8n, Dify.
+
+---
+
+### Previous: Frontend Developer Intern at Expand Enterprises Inc.
+Period: March 2023 – July 2023
+Type: Internship
+
+What Drawde did as an intern:
+- Collaborated with cross-functional teams to plan and execute project workflows.
+- Used Adobe XD to create wireframes and mockups for stakeholders.
+- Developed web applications using Angular Framework.
+- Integrated RESTful APIs connecting MS SQL databases and Firebase.
+- Contributed to mobile app development using Flutter.
+
+Technologies: Angular, Flutter, Firebase, MS SQL, Adobe XD, REST APIs.
+
+---
+
+## SKILLS
+
+### Full Stack Web Development
+Drawde builds web applications across the entire stack — frontend, backend, and database.
+Technologies: Next.js, React, Vue.js, Node.js, TypeScript, Tailwind CSS, MongoDB, Supabase, Django, REST API.
+He has shipped production systems including an insurance platform, HRIS tools, real-time dashboards, and a multi-tenant POS system.
+
+### Cross-Platform Mobile Development
+Drawde builds mobile apps for both iOS and Android from a single codebase.
+Technologies: Flutter, React Native, Expo, Dart, Firebase, Play Store deployment, App Store deployment.
+He has built queue management apps, event apps, and blockchain frontends with consistent UX on both platforms.
+
+### AI Integration & Fine-Tuning
+Drawde integrates AI into products and fine-tunes models for real-world use cases.
+Technologies: Dify, Google Colab, Python, OpenAI API, Hugging Face, LangChain, RAG (Retrieval-Augmented Generation).
+He builds AI chatbots, multi-step AI workflows, and experiments with model fine-tuning via Google Colab.
+
+### Workflow Automation
+Drawde automates complex business processes so they run without manual intervention.
+Technologies: n8n, UIPath, IBM RPA, Webhooks, REST API, Agentic AI.
+He is certified in UIPath RPA and IBM RPA & RAG & Agentic AI. He has automated loan processing pipelines, insurance claims workflows, and ordering systems.
+
+---
+
+## PROJECTS
+
+### 1. Snap and Pose
+Category: Photo / Web App
+URL: https://photobooth-app-delta.vercel.app/
+GitHub: https://github.com/Drawde0731/photobooth-app
+Description: A browser-based photo booth app. Users open the browser, hit the shutter, and get a photo strip and animated GIFs from their webcam. No installs, no sign-ups required. Includes timestamped downloads and a retry button.
+Tech stack: Next.js, Tailwind CSS, ShadCN UI.
+
+### 2. Next Day
+Category: Fun / Web App
+URL: https://next-day-peach.vercel.app/
+GitHub: https://github.com/Drawde0731/next-day
+Description: A fun app that predicts what tomorrow looks like for the user, inspired by a TikTok trend. Features light and dark mode, clean ShadCN components, and an animated intro experience.
+Tech stack: Next.js, ShadCN UI, Tailwind CSS, TypeScript.
+
+### 3. Jeepney Fare Calculator
+Category: Utility / Web App (PWA)
+URL: https://jeepney-fare-calculator.vercel.app/
+GitHub: https://github.com/Drawde0731/jeepney-fare-calculator
+Description: Pulls today's national average diesel price and runs it through LTFRB fare structures to produce a live fare matrix for Philippine jeepneys. Users can drag a fuel price slider and everything recalculates instantly. Exportable as PDF and installable as a Progressive Web App (PWA) for offline use.
+Tech stack: Next.js, TypeScript, Tailwind CSS, Chart.js.
+
+### 4. Brewde
+Category: Retail & POS Management System
+URL: https://brewde.vercel.app/
+GitHub: https://github.com/Drawde0731/Brewde
+Description: A full multi-tenant POS and management system built for a real growing coffee brand. Includes merchant onboarding, a full POS with cart and checkout, PWD/Senior discounts, a sales dashboard, and separate role-based access for Admins, Owners, and Cashiers.
+Tech stack: Next.js, Supabase, TypeScript, Tailwind CSS.
+
+---
+
+## CERTIFICATIONS
+
+1. RPA Fundamentals — UIPath
+2. RPA & RAG & Agentic AI — IBM
+3. Oracle Partner Network Solution — Oracle
+4. Informatica MDM SaaS — Informatica
+5. Blockchain Foundation — Various issuers
+6. Programming & Technology Fundamentals — Coursera
+
+---
+
+## FREQUENTLY ASKED QUESTIONS (for chatbot context)
+
+Q: Who is Drawde?
+A: Drawde (John Edward Complido) is a software engineer from the Philippines with experience in full-stack web development, cross-platform mobile apps, AI integration, and workflow automation. He currently works at Qymera and has built real production systems across insurance, HRIS, POS, blockchain, and AI-powered automation domains.
+
+Q: What technologies does Drawde know?
+A: Web: Next.js, React, Vue.js, Node.js, TypeScript, Tailwind CSS, MongoDB, Supabase, Django. Mobile: Flutter, React Native, Expo, Dart, Firebase. AI: Dify, Google Colab, Python, OpenAI API, LangChain, RAG, Hugging Face. Automation: n8n, UIPath, IBM RPA, Agentic AI.
+
+Q: Can Drawde build mobile apps?
+A: Yes. Drawde builds cross-platform mobile applications using Flutter and React Native. He has shipped queue management, event, and blockchain apps for both iOS and Android. He can handle deployment to both the Play Store and App Store.
+
+Q: Can Drawde work with AI?
+A: Yes. Drawde integrates AI into products using tools like Dify and the OpenAI API. He fine-tunes models using Google Colab and has built multi-step AI workflows and chatbots for client-facing products. He is certified in IBM's RAG and Agentic AI program.
+
+Q: Does Drawde do automation?
+A: Yes. Drawde is certified in UIPath RPA and IBM RPA & Agentic AI. He uses n8n to build automation pipelines for real business processes like loan processing, insurance claims, and ordering systems.
+
+Q: What kind of projects has Drawde built?
+A: He has built a browser-based photo booth app (Snap and Pose), a jeepney fare calculator PWA, a fun prediction app (Next Day), and a multi-tenant cafe POS system (Brewde). Professionally he has worked on insurance platforms, HRIS tools, event systems, chatbots, and blockchain frontends.
+
+Q: How can I contact Drawde?
+A: Email: johnedward1436@gmail.com | Phone: 09477362471 | LinkedIn: https://www.linkedin.com/in/john-edward-complido-3b7b8b257/ | GitHub: https://github.com/Drawde0731
+
+Q: Is Drawde available for freelance or new projects?
+A: Drawde is open to collaboration. The best way to reach him is through the contact form on this portfolio or directly via email at johnedward1436@gmail.com.
+
+Q: Where is Drawde based?
+A: Bocaue, Bulacan, Philippines.
+
+Q: What is Drawde's educational background?
+A: He completed a BS in Computer Science at the Technological University of the Philippines.
+
+Q: What does Drawde do at his current job?
+A: He works as a Software Engineer at Qymera (June 2024 – Present), where he builds web and mobile apps, integrates REST APIs, creates AI chatbots with Dify, and builds automation workflows with n8n for clients in insurance, HRIS, events, and more.
+
+Q: What is Drawde's GitHub?
+A: https://github.com/Drawde0731
+
+Q: What is Drawde's LinkedIn?
+A: https://www.linkedin.com/in/john-edward-complido-3b7b8b257/
+
+Q: What backend technologies does Drawde know?
+A: Node.js, Django, MongoDB, Supabase, Firebase, REST APIs, and third-party API integration.
+
+Q: Does Drawde know n8n?
+A: Yes. Drawde uses n8n professionally at Qymera to build automation workflows. He has automated insurance claims, loan processing pipelines, and ordering systems using n8n.
+
+Q: What is Brewde?
+A: Brewde is a multi-tenant POS and cafe management system Drawde built for a real coffee brand. It includes merchant onboarding, cart and checkout, PWD/Senior discounts, a sales dashboard, and role-based access. Built with Next.js and Supabase.
+
+Q: What is Snap and Pose?
+A: A browser-based photo booth app. No installs needed — open the browser, hit shutter, get a photo strip and GIFs from your webcam. Built with Next.js and Tailwind CSS.
+
+Q: What is the Jeepney Fare Calculator?
+A: A PWA that uses real-time national diesel prices and LTFRB fare structures to compute a live fare matrix for Philippine jeepneys. Works offline, exports to PDF. Built with Next.js, TypeScript, and Chart.js.
+
+Q: Does Drawde have any RPA certifications?
+A: Yes. He holds UIPath RPA Fundamentals certification and IBM's RPA, RAG & Agentic AI certification.
+
+Q: Can Drawde build full-stack applications?
+A: Yes. Drawde works across the entire stack — React/Next.js on the frontend, Node.js or Django on the backend, and MongoDB or Supabase for the database. He handles API design, integration, and deployment.
+
+---
+
+## SUMMARY (for short-context retrieval)
+
+Drawde is a software engineer from the Philippines who builds production software across web, mobile, AI, and automation. He is currently a Software Engineer at Qymera and has worked across insurance, HRIS, POS, blockchain, queue management, and AI automation systems. His main technologies are Next.js, React, Flutter, React Native, Node.js, n8n, Dify, and Python. He holds certifications in UIPath RPA, IBM RPA & RAG & Agentic AI, Oracle, Informatica, and Blockchain. He studied BS Computer Science at the Technological University of the Philippines. His personal projects include Brewde (cafe POS), Snap and Pose (photo booth app), Jeepney Fare Calculator (PWA), and Next Day (fun app). He can be contacted at johnedward1436@gmail.com.

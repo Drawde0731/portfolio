@@ -1,66 +1,64 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Code2, Smartphone, Brain, Zap } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { SERVICES } from "@/lib/constants";
+import { SKILLS } from "@/lib/constants";
 import type { LucideIcon } from "lucide-react";
 
-const SERVICE_ICONS: Record<string, LucideIcon> = { Code2, Smartphone, Brain, Zap };
+const SKILL_ICONS: Record<string, LucideIcon> = { Code2, Smartphone, Brain, Zap };
 
 export default function ServicesSection() {
   return (
     <section
-      id="services"
+      id="skills"
       className="py-28 bg-white"
       style={{ borderTop: "1px solid rgba(0,0,0,0.07)" }}
     >
       <div className="max-w-6xl mx-auto px-6">
         <SectionHeader
-          eyebrow="Services"
-          title="What I Build"
-          subtitle="End-to-end development across web, mobile, and automation."
+          eyebrow="Skills"
+          title="What I Know"
+          subtitle="Technologies and tools I work with across web, mobile, AI, and automation."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {SERVICES.map((service, i) => {
-            const Icon = SERVICE_ICONS[service.icon] ?? Code2;
+          {SKILLS.map((skill) => {
+            const Icon = SKILL_ICONS[skill.icon] ?? Code2;
             return (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.09 }}
+              <div
+                key={skill.title}
+                className="bg-white rounded-xl p-8 flex flex-col gap-5"
+                style={{ border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}
               >
+                {/* Icon */}
                 <div
-                  className="bg-white hover:shadow-card-hover rounded-xl p-8 h-full flex flex-col transition-shadow duration-300"
-                  style={{ border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}
+                  className="p-3 rounded-lg w-fit"
+                  style={{ background: "#FFFFFF", border: "1px solid rgba(0,0,0,0.08)" }}
                 >
-                  {/* Icon */}
-                  <div
-                    className="p-3 rounded-lg w-fit mb-6"
-                    style={{ background: "#FFFFFF", border: "1px solid rgba(0,0,0,0.08)" }}
-                  >
-                    <Icon size={20} className="text-text-secondary" />
-                  </div>
-
-                  <h3 className="text-base font-semibold text-ink mb-2.5">{service.title}</h3>
-                  <p className="text-sm text-text-secondary leading-relaxed mb-6 flex-1 font-light">
-                    {service.description}
-                  </p>
-
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-3 text-sm font-light text-text-muted">
-                        <span className="w-1 h-1 rounded-full shrink-0 bg-text-muted/40" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-
+                  <Icon size={20} className="text-text-secondary" />
                 </div>
-              </motion.div>
+
+                {/* Title + description */}
+                <div>
+                  <h3 className="text-base font-semibold text-ink mb-2">{skill.title}</h3>
+                  <p className="text-sm text-text-secondary leading-relaxed font-light">
+                    {skill.description}
+                  </p>
+                </div>
+
+                {/* Tech stack tags */}
+                <div className="flex flex-wrap gap-2 pt-1">
+                  {skill.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-1 text-[11px] font-mono rounded-full text-text-muted"
+                      style={{ background: "#F5F5F3", border: "1px solid rgba(0,0,0,0.08)" }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
             );
           })}
         </div>

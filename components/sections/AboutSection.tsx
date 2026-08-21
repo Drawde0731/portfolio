@@ -1,6 +1,5 @@
-﻿"use client";
+"use client";
 
-import { motion } from "framer-motion";
 import { MapPin, GraduationCap } from "lucide-react";
 import Image from "next/image";
 
@@ -17,18 +16,9 @@ export default function AboutSection() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
-          {/* ── Left: illustration ── */}
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="flex items-center justify-center"
-          >
-            <div
-              className="relative select-none"
-              style={{ width: "clamp(240px, 40vw, 460px)" }}
-            >
+          {/* Left: illustration */}
+          <div className="flex items-center justify-center">
+            <div className="relative select-none" style={{ width: "clamp(240px, 40vw, 460px)" }}>
               <Image
                 src="/illustration-about.png"
                 alt="Cozy coding setup with cat"
@@ -37,16 +27,10 @@ export default function AboutSection() {
                 className="w-full h-auto object-contain"
               />
             </div>
-          </motion.div>
+          </div>
 
-          {/* ── Right: text ── */}
-          <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.65, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="flex flex-col gap-6"
-          >
+          {/* Right: text */}
+          <div className="flex flex-col gap-6">
             <div>
               <p className="text-xs font-semibold tracking-[0.2em] uppercase text-text-muted mb-3">
                 About Me
@@ -83,10 +67,8 @@ export default function AboutSection() {
             {/* Info chips */}
             <div className="flex flex-col gap-3 pt-1">
               <div className="flex items-center gap-3">
-                <div
-                  className="p-2 rounded-lg shrink-0"
-                  style={{ background: "#FFFFFF", border: "1px solid rgba(0,0,0,0.07)" }}
-                >
+                <div className="p-2 rounded-lg shrink-0"
+                  style={{ background: "#FFFFFF", border: "1px solid rgba(0,0,0,0.07)" }}>
                   <MapPin size={14} className="text-text-secondary" />
                 </div>
                 <span className="text-sm text-text-secondary font-light">
@@ -94,10 +76,8 @@ export default function AboutSection() {
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <div
-                  className="p-2 rounded-lg shrink-0"
-                  style={{ background: "#FFFFFF", border: "1px solid rgba(0,0,0,0.07)" }}
-                >
+                <div className="p-2 rounded-lg shrink-0"
+                  style={{ background: "#FFFFFF", border: "1px solid rgba(0,0,0,0.07)" }}>
                   <GraduationCap size={14} className="text-text-secondary" />
                 </div>
                 <span className="text-sm text-text-secondary font-light">
@@ -115,7 +95,7 @@ export default function AboutSection() {
                 Get in Touch
               </button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Bot, Database, Server, Link, GraduationCap } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { EXPERIENCE, CERTIFICATIONS } from "@/lib/constants";
@@ -24,14 +23,8 @@ export default function ExperienceSection() {
 
         {/* Timeline */}
         <div className="space-y-5 mb-20">
-          {EXPERIENCE.map((exp, i) => (
-            <motion.div
-              key={exp.company}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.55, delay: i * 0.12 }}
-            >
+          {EXPERIENCE.map((exp) => (
+            <div key={exp.company}>
               <div
                 className="bg-white rounded-2xl p-7"
                 style={{
@@ -73,7 +66,7 @@ export default function ExperienceSection() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
@@ -82,30 +75,26 @@ export default function ExperienceSection() {
           Certifications
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {CERTIFICATIONS.map((cert, i) => {
+          {CERTIFICATIONS.map((cert) => {
             const Icon = CERT_ICONS[cert.icon] ?? GraduationCap;
             return (
-              <motion.div
+              <a
                 key={`${cert.title}-${cert.issuer}`}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.06 }}
+                href={cert.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white rounded-2xl p-5 flex items-center gap-4 group hover:shadow-card-hover transition-shadow duration-300"
+                style={{ border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}
               >
-                <a href={cert.href} target="_blank" rel="noopener noreferrer"
-                  className="bg-white rounded-2xl p-5 flex items-center gap-4 group hover:shadow-card-hover transition-shadow duration-300 block"
-                  style={{ border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}
-                >
-                  <div className="p-2.5 rounded-xl shrink-0 group-hover:bg-ink group-hover:border-ink transition-all duration-200"
-                    style={{ background: "#FFFFFF", border: "1px solid rgba(0,0,0,0.07)" }}>
-                    <Icon size={14} className="text-text-secondary group-hover:text-gray-300 transition-colors duration-200" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-ink leading-tight">{cert.title}</div>
-                    <div className="text-xs text-text-muted mt-0.5">{cert.issuer}</div>
-                  </div>
-                </a>
-              </motion.div>
+                <div className="p-2.5 rounded-xl shrink-0 group-hover:bg-ink group-hover:border-ink transition-all duration-200"
+                  style={{ background: "#FFFFFF", border: "1px solid rgba(0,0,0,0.07)" }}>
+                  <Icon size={14} className="text-text-secondary group-hover:text-gray-300 transition-colors duration-200" />
+                </div>
+                <div>
+                  <div className="text-sm font-medium text-ink leading-tight">{cert.title}</div>
+                  <div className="text-xs text-text-muted mt-0.5">{cert.issuer}</div>
+                </div>
+              </a>
             );
           })}
         </div>
