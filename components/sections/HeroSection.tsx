@@ -48,7 +48,7 @@ export default function HeroSection() {
               className="text-sm leading-relaxed font-light max-w-md"
               style={{ color: "#888888" }}
             >
-              Web, mobile, AI, automation. One engineer, the whole stack.
+              Web. Mobile. AI. Automation. One engineer.
             </p>
 
             {/* Social icons */}
