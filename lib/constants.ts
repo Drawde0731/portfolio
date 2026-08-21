@@ -1,4 +1,4 @@
-export const NAV_LINKS = [
+﻿export const NAV_LINKS = [
   { label: "About",      href: "#about"      },
   { label: "Experience", href: "#experience" },
   { label: "Projects",   href: "#projects"   },
@@ -70,7 +70,7 @@ export const SERVICES = [
     icon: "Smartphone",
     title: "Cross-Platform Mobile Apps",
     description:
-      "Flutter and React Native — one codebase for iOS and Android. I've built queue management apps, event apps, and blockchain frontends. The experience is consistent on both platforms.",
+      "Flutter and React Native, one codebase for iOS and Android. I've built queue management apps, event apps, and blockchain frontends. The experience is consistent on both platforms.",
     features: [
       "Flutter app development",
       "React Native apps",
@@ -82,7 +82,7 @@ export const SERVICES = [
     icon: "Layout",
     title: "Frontend Engineering",
     description:
-      "Figma or Adobe XD to code, component by component, breakpoint by breakpoint. Eight production systems in — I know exactly where the gaps between design and implementation hide.",
+      "Figma or Adobe XD to code, component by component, breakpoint by breakpoint. Eight production systems in, I know exactly where the gaps between design and implementation hide.",
     features: [
       "Figma / Adobe XD to code",
       "Component library development",
@@ -94,7 +94,7 @@ export const SERVICES = [
     icon: "Zap",
     title: "API Integration & Automation",
     description:
-      "REST APIs, third-party integrations, and automated workflows. Certified in UIPath and IBM RPA. I connect the moving parts — backends, services, and pipelines — and make them stay connected.",
+      "REST APIs, third-party integrations, and automated workflows. Certified in UIPath and IBM RPA. I connect the moving parts, backends, services, and pipelines, and make them stay connected.",
     features: [
       "Third-party API integration",
       "Node.js / Django backend",
@@ -116,7 +116,7 @@ export const EXPERIENCE = [
       "Integrated REST and third-party APIs to support real-time data and user workflows.",
       "Contributed to backend development using Node.js, MongoDB, and Django when needed.",
       "Participated in code reviews, ticket management, and agile collaboration via GitHub.",
-      "Built AI-powered automation workflows using n8n — including loan processing, insurance claims, and ordering systems.",
+      "Built AI-powered automation workflows using n8n, including loan processing, insurance claims, and ordering systems.",
       "Created AI chatbots and multi-step workflows using Dify for internal tooling and client-facing products.",
     ],
     tech: [

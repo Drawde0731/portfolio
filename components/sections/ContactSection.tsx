@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -200,7 +200,7 @@ export default function ContactSection() {
             </h2>
 
             <p className="text-sm text-text-secondary font-light leading-relaxed max-w-sm">
-              Building production web and mobile apps that actually ship — from Figma files to live
+              Building production web and mobile apps that actually ship, from Figma files to live
               deployments. Let&apos;s build something together.
             </p>
 

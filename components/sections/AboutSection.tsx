@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { MapPin, GraduationCap } from "lucide-react";
@@ -63,7 +63,7 @@ export default function AboutSection() {
 
             <p className="text-base text-text-secondary leading-relaxed font-light">
               I&apos;m a software engineer with two years of experience building
-              production systems for enterprise clients — insurance platforms,
+              production systems for enterprise clients, insurance platforms,
               HRIS, multi-tenant POS, and custom internal tools. I live at the
               intersection of design and engineering, which means I care about
               how things look as much as how they work.
@@ -95,7 +95,7 @@ export default function AboutSection() {
                   <GraduationCap size={14} className="text-text-secondary" />
                 </div>
                 <span className="text-sm text-text-secondary font-light">
-                  BS Information Technology — Bulacan State University
+                  BS Information Technology, Bulacan State University
                 </span>
               </div>
             </div>
