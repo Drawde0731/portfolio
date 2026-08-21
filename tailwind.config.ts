@@ -16,7 +16,7 @@ const config: Config = {
         "ink":        "#111111",
         "ink-2":      "#1A1A1A",
         // Accent
-        "accent":     "#F5C542",
+        "accent":     "#111111",
         // Text
         "text-primary":   "#111111",
         "text-secondary": "#555555",

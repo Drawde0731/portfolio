@@ -54,7 +54,7 @@ export default function ProjectsSection() {
                   className="font-bold tabular-nums leading-none shrink-0 select-none"
                   style={{
                     fontSize: "clamp(2.8rem, 5vw, 4.5rem)",
-                    color: "#F5C542",
+                    color: "#111111",
                     letterSpacing: "-0.04em",
                   }}
                 >

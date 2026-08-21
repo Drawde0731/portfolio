@@ -36,7 +36,7 @@ export default function ExperienceSection() {
                 className="bg-white rounded-2xl p-7"
                 style={{
                   border: "1px solid rgba(0,0,0,0.08)",
-                  borderLeft: exp.current ? "3px solid #F5C542" : "3px solid rgba(0,0,0,0.12)",
+                  borderLeft: exp.current ? "3px solid #111111" : "3px solid rgba(0,0,0,0.12)",
                   boxShadow: "0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.04)",
                 }}
               >

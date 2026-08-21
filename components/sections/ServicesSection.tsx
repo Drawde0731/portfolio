@@ -43,7 +43,7 @@ export default function ServicesSection() {
                   {/* Icon */}
                   <div
                     className="p-3 rounded-lg w-fit mb-6"
-                    style={{ background: "#F5F5F3", border: "1px solid rgba(0,0,0,0.08)" }}
+                    style={{ background: "#FFFFFF", border: "1px solid rgba(0,0,0,0.08)" }}
                   >
                     <Icon size={20} className="text-text-secondary" />
                   </div>
