@@ -101,7 +101,7 @@ export default function AboutSection() {
                   <GraduationCap size={14} className="text-text-secondary" />
                 </div>
                 <span className="text-sm text-text-secondary font-light">
-                  BS Information Technology, Bulacan State University
+                  BS Computer Science, Technological University of the Philippines
                 </span>
               </div>
             </div>
