@@ -30,6 +30,7 @@ const inputStyle = {
 };
 const inputFocusStyle = {
   border: "2px solid #111111",
+  borderRadius: "6px",
 };
 
 function Field({ children }: { children: React.ReactNode }) {
