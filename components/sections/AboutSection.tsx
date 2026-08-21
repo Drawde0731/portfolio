@@ -62,16 +62,29 @@ export default function AboutSection() {
             </div>
 
             <p className="text-base text-text-secondary leading-relaxed font-light">
-              I&apos;m a software engineer with two years of experience building
-              production systems for enterprise clients, insurance platforms,
-              HRIS, multi-tenant POS, and custom internal tools. I live at the
-              intersection of design and engineering, which means I care about
-              how things look as much as how they work.
+              I&apos;m a software engineer focused on building production systems
+              across web, mobile, AI, and automation.
             </p>
             <p className="text-base text-text-secondary leading-relaxed font-light">
-              My typical stack is React or Next.js on the front, Flutter or
-              React Native on mobile, and whatever backend the project calls for.
-              I&apos;ve shipped apps used daily by real users, not just toy projects.
+              I build web applications with React and Next.js, mobile apps with
+              Flutter and React Native, and backend systems tailored to the needs
+              of each project. I also work with AI and automation, building
+              intelligent workflows and tools that simplify processes, analyze
+              information, and support real business decisions.
+            </p>
+            <p className="text-base text-text-secondary leading-relaxed font-light">
+              I&apos;ve worked on real-world systems across insurance, HRIS,
+              multi-tenant POS, blockchain, queue management, and AI-powered
+              workflows. This includes fine-tuning and experimenting with deep
+              learning models, developing AI chatbots, and automating complex
+              business processes such as loan processing and insurance claims.
+            </p>
+            <p className="text-base text-text-secondary leading-relaxed font-light">
+              Outside of professional work, I enjoy building things from scratch.
+              I&apos;ve created a photobooth app, a jeepney fare calculator, a
+              full POS system for a coffee brand, and AI-powered tools and
+              automations that turn ideas and complex processes into working
+              products.
             </p>
 
             {/* Info chips */}
