@@ -2,91 +2,118 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
-import SectionHeader from "@/components/ui/SectionHeader";
 import { PROJECTS } from "@/lib/constants";
-
-const TILTS = ["rotate-1", "-rotate-1", "-rotate-1", "rotate-1"];
-const IMAGE_BG = ["#111111", "#1A1A1A", "#111111", "#1A1A1A"];
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-28 section-light" style={{ borderTop: "1px solid rgba(0,0,0,0.07)" }}>
+    <section
+      id="projects"
+      className="py-28"
+      style={{ background: "#111111", borderTop: "1px solid rgba(255,255,255,0.06)" }}
+    >
       <div className="max-w-6xl mx-auto px-6">
-        <SectionHeader eyebrow="Portfolio" title="Featured Work"
-          subtitle="Personal projects built for fun, for friends, and for real people." />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-10 md:gap-y-14 items-stretch">
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55 }}
+          className="mb-16"
+        >
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-4"
+            style={{ color: "rgba(255,255,255,0.35)" }}>
+            Portfolio
+          </p>
+          <h2
+            className="font-bold text-white tracking-tight leading-none"
+            style={{ fontSize: "clamp(2.2rem, 5vw, 3.5rem)" }}
+          >
+            My Projects
+          </h2>
+          <p className="mt-4 text-base font-light max-w-lg"
+            style={{ color: "rgba(255,255,255,0.5)" }}>
+            Personal projects built for fun, for friends, and for real people.
+          </p>
+        </motion.div>
+
+        {/* Numbered project list */}
+        <div>
           {PROJECTS.map((project, i) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 28 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`${TILTS[i % TILTS.length]} hover:rotate-0 transition-transform duration-500 h-full`}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
             >
-              <div className="polaroid flex flex-col h-full" style={{ borderRadius: "3px", border: "1px solid rgba(0,0,0,0.08)" }}>
+              {/* divider */}
+              {i > 0 && <div className="h-px" style={{ background: "rgba(255,255,255,0.06)" }} />}
 
-                {/* Photo area */}
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full overflow-hidden group/photo flex-shrink-0"
-                  style={{ height: "220px", background: IMAGE_BG[i % IMAGE_BG.length] }}
-                  aria-label={`Open ${project.title} live site`}
+              <div className="py-10 grid grid-cols-1 lg:grid-cols-[6rem_1fr] gap-5 lg:gap-10 items-start group">
+
+                {/* Number */}
+                <div
+                  className="font-bold tabular-nums leading-none shrink-0 select-none transition-opacity duration-300 group-hover:opacity-80"
+                  style={{
+                    fontSize: "clamp(2.8rem, 5vw, 4.5rem)",
+                    color: "#F5C542",
+                    letterSpacing: "-0.04em",
+                  }}
                 >
-                  <div className="w-full h-full flex items-center justify-center relative">
-                    <div className="text-center px-8 select-none transition-opacity duration-300 group-hover/photo:opacity-30">
-                      <div className="font-semibold text-white/20 mb-2"
-                        style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)", letterSpacing: "-0.04em", lineHeight: 1 }}>
-                        {project.title.split(" ").map((w: string) => w[0]).join("").slice(0, 3)}
-                      </div>
-                      <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/30">{project.category}</div>
-                    </div>
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/photo:opacity-100 transition-opacity duration-300">
-                      <div className="flex items-center gap-2 text-white text-sm font-medium">
-                        <ExternalLink size={16} />
-                        <span>View Live</span>
-                      </div>
-                    </div>
-                  </div>
-                </a>
+                  {String(i + 1).padStart(2, "0")}
+                </div>
 
-                {/* Caption area — flex-col so links stay at bottom */}
-                <div className="bg-white px-6 pt-5 pb-8 flex flex-col flex-1">
-                  <span className="text-[9px] font-semibold uppercase tracking-[0.18em] text-text-muted">
-                    {project.category}
-                  </span>
-                  <h3 className="text-[1.1rem] font-semibold text-ink mt-1 mb-2 leading-snug">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-text-secondary leading-relaxed mb-3 font-light flex-1">
-                    {project.description}
-                  </p>
-                  <p className="text-xs text-text-muted italic font-light mb-4">{project.highlight}</p>
-
-                  {/* Tech tags */}
-                  <div className="flex flex-wrap gap-1 mb-5" style={{ paddingTop: "14px", borderTop: "1px solid rgba(0,0,0,0.06)" }}>
-                    {project.tech.map((t: string) => (
-                      <span key={t} className="px-2 py-0.5 text-[10px] font-mono rounded-sm text-text-muted"
-                        style={{ background: "#F5F5F3", border: "1px solid rgba(0,0,0,0.08)" }}>
-                        {t}
+                {/* Content */}
+                <div>
+                  <div className="flex flex-wrap items-start justify-between gap-4 mb-3">
+                    <div>
+                      <span className="text-[10px] font-semibold uppercase tracking-[0.16em] mb-1 block"
+                        style={{ color: "rgba(255,255,255,0.35)" }}>
+                        {project.category}
                       </span>
-                    ))}
-                  </div>
-
-                  {/* Links — pinned to bottom */}
-                  <div className="flex items-center gap-3 mt-auto">
+                      <h3 className="text-xl font-semibold text-white leading-tight">
+                        {project.title}
+                      </h3>
+                    </div>
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-xs font-medium text-ink hover:opacity-60 transition-opacity"
+                      className="flex items-center gap-1.5 text-xs font-medium transition-colors shrink-0 mt-1"
+                      style={{ color: "rgba(255,255,255,0.35)" }}
+                      onMouseEnter={e => (e.currentTarget.style.color = "#fff")}
+                      onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.35)")}
                     >
                       <ExternalLink size={12} />
                       Live Site
                     </a>
+                  </div>
+
+                  <p className="text-sm leading-relaxed mb-3 font-light max-w-2xl"
+                    style={{ color: "rgba(255,255,255,0.55)" }}>
+                    {project.description}
+                  </p>
+                  {project.highlight && (
+                    <p className="text-xs italic mb-4 font-light"
+                      style={{ color: "rgba(255,255,255,0.35)" }}>
+                      {project.highlight}
+                    </p>
+                  )}
+
+                  {/* Tech tags */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.tech.map((t: string) => (
+                      <span key={t}
+                        className="px-2.5 py-1 text-[10px] font-mono rounded-full"
+                        style={{
+                          background: "rgba(255,255,255,0.06)",
+                          border: "1px solid rgba(255,255,255,0.08)",
+                          color: "rgba(255,255,255,0.45)",
+                        }}>
+                        {t}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>

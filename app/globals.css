@@ -10,10 +10,10 @@
   --border: rgba(0,0,0,0.08);
 }
 
-html { scroll-behavior: smooth; background-color: #F5F5F3; }
+html { scroll-behavior: smooth; background-color: #FFFFFF; }
 
 body {
-  background-color: #F5F5F3;
+  background-color: #FFFFFF;
   color: #111111;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -21,7 +21,7 @@ body {
 
 /* ── Scrollbar ── */
 ::-webkit-scrollbar        { width: 5px; }
-::-webkit-scrollbar-track  { background: #F5F5F3; }
+::-webkit-scrollbar-track  { background: #FFFFFF; }
 ::-webkit-scrollbar-thumb  { background: rgba(0,0,0,0.15); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.3); }
 

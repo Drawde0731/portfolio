@@ -10,15 +10,20 @@ const CERT_ICONS: Record<string, LucideIcon> = { Bot, Database, Server, Link, Gr
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-28 section-white" style={{ borderTop: "1px solid rgba(0,0,0,0.07)" }}>
+    <section
+      id="experience"
+      className="py-28 section-dark"
+      style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+    >
       <div className="max-w-6xl mx-auto px-6">
         <SectionHeader
           eyebrow="Career"
-          title="Experience & Certifications"
+          title="My Experience"
           subtitle="Two years shipping production software across web, mobile, and enterprise platforms."
+          dark
         />
 
-        {/* Timeline — left-border card approach, no floating dots */}
+        {/* Timeline */}
         <div className="space-y-5 mb-20">
           {EXPERIENCE.map((exp, i) => (
             <motion.div
@@ -32,7 +37,7 @@ export default function ExperienceSection() {
                 className="bg-white rounded-2xl p-7"
                 style={{
                   border: "1px solid rgba(0,0,0,0.07)",
-                  borderLeft: exp.current ? "3px solid #111111" : "3px solid rgba(0,0,0,0.12)",
+                  borderLeft: exp.current ? "3px solid #F5C542" : "3px solid rgba(0,0,0,0.12)",
                   boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
                 }}
               >
@@ -56,26 +61,17 @@ export default function ExperienceSection() {
                 <ul className="space-y-2.5 mb-5">
                   {exp.bullets.map((bullet, bi) => (
                     <li key={bi} className="flex gap-3 text-sm text-text-secondary leading-relaxed font-light">
-                      <span
-                        className="mt-2 w-1 h-1 rounded-full shrink-0"
-                        style={{ background: "rgba(0,0,0,0.2)" }}
-                      />
+                      <span className="mt-2 w-1 h-1 rounded-full shrink-0" style={{ background: "rgba(0,0,0,0.2)" }} />
                       {bullet}
                     </li>
                   ))}
                 </ul>
 
                 {/* Tech badges */}
-                <div
-                  className="flex flex-wrap gap-1.5 pt-4"
-                  style={{ borderTop: "1px solid rgba(0,0,0,0.06)" }}
-                >
+                <div className="flex flex-wrap gap-1.5 pt-4" style={{ borderTop: "1px solid rgba(0,0,0,0.06)" }}>
                   {exp.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="px-2.5 py-1 text-[10px] font-mono rounded-full text-text-muted"
-                      style={{ background: "#F5F5F3", border: "1px solid rgba(0,0,0,0.08)" }}
-                    >
+                    <span key={t} className="px-2.5 py-1 text-[10px] font-mono rounded-full text-text-muted"
+                      style={{ background: "#F5F5F3", border: "1px solid rgba(0,0,0,0.08)" }}>
                       {t}
                     </span>
                   ))}
@@ -86,7 +82,8 @@ export default function ExperienceSection() {
         </div>
 
         {/* Certifications */}
-        <p className="text-[10px] font-semibold tracking-[0.22em] uppercase text-text-muted mb-8 text-center">
+        <p className="text-[10px] font-semibold tracking-[0.22em] uppercase mb-8 text-center"
+          style={{ color: "rgba(255,255,255,0.35)" }}>
           Certifications
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -100,21 +97,16 @@ export default function ExperienceSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
               >
-                <a
-                  href={cert.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <a href={cert.href} target="_blank" rel="noopener noreferrer"
                   className="bg-white rounded-2xl p-5 flex items-center gap-4 group hover:shadow-card-hover transition-shadow duration-300 block"
                   style={{ border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 1px 2px rgba(0,0,0,0.03)" }}
                 >
-                  <div
-                    className="p-2.5 rounded-xl shrink-0 group-hover:bg-ink group-hover:border-ink transition-all duration-200"
-                    style={{ background: "#F5F5F3", border: "1px solid rgba(0,0,0,0.07)" }}
-                  >
+                  <div className="p-2.5 rounded-xl shrink-0 group-hover:bg-ink group-hover:border-ink transition-all duration-200"
+                    style={{ background: "#F5F5F3", border: "1px solid rgba(0,0,0,0.07)" }}>
                     <Icon size={14} className="text-text-secondary group-hover:text-gray-300 transition-colors duration-200" />
                   </div>
                   <div>
-                    <div className="text-sm font-medium text-ink leading-tight group-hover:text-ink transition-colors">{cert.title}</div>
+                    <div className="text-sm font-medium text-ink leading-tight">{cert.title}</div>
                     <div className="text-xs text-text-muted mt-0.5">{cert.issuer}</div>
                   </div>
                 </a>

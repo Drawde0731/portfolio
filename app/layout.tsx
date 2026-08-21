@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Drawde.",
@@ -50,12 +58,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-sans bg-background text-foreground antialiased">
+      <body className={`${spaceGrotesk.variable} font-sans bg-white text-foreground antialiased`}>
         <Navbar />
         {children}
         <Footer />
 
-        {/* Dify chatbot — exact same as their HTML embed snippet */}
+        {/* Dify chatbot */}
         {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
         <script
           dangerouslySetInnerHTML={{

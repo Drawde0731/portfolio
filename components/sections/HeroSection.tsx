@@ -1,147 +1,131 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
+import Image from "next/image";
 
-// ─── Keyboard Keys — spell D-R-A-W-D-E ───────────────────────────────────────
-
-const KEYS = [
-  { label: "D", style: { top: "18%", left:  "5%" },  delay: 0   },
-  { label: "R", style: { top: "65%", left:  "4%" },  delay: 0.4 },
-  { label: "A", style: { top: "40%", left:  "8%" },  delay: 0.8 },
-  { label: "W", style: { top: "22%", right: "6%" },  delay: 0.2 },
-  { label: "D", style: { top: "72%", right: "5%" },  delay: 0.6 },
-  { label: "E", style: { top: "48%", right: "7%" },  delay: 1.0 },
+const SOCIALS = [
+  { href: "https://github.com/Drawde0731",                                           icon: Github,   label: "GitHub"   },
+  { href: "https://www.linkedin.com/in/john-edward-complido-3b7b8b257/",             icon: Linkedin, label: "LinkedIn" },
+  { href: "mailto:johnedward1436@gmail.com",                                         icon: Mail,     label: "Email"    },
 ];
 
-function KeyboardKey({ label, style, delay }: {
-  label: string; style: React.CSSProperties; delay: number;
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.7 }}
-      animate={{ opacity: 0.35, scale: 1 }}
-      transition={{ delay, duration: 0.6, ease: "easeOut" }}
-      style={style}
-      className="absolute z-10 hidden lg:flex"
-    >
-      <motion.div
-        animate={{ y: [0, -5, 0] }}
-        transition={{ duration: 3.2 + delay * 0.4, repeat: Infinity, ease: "easeInOut", delay: delay * 0.5 }}
-        className="key-cap min-w-[40px] h-10 flex items-center justify-center px-2.5 font-mono text-[11px] font-medium select-none"
-      >
-        {label}
-      </motion.div>
-    </motion.div>
-  );
-}
-
-// ─── Hero ─────────────────────────────────────────────────────────────────────
-
 export default function HeroSection() {
-  const go = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-ink">
+    <section className="relative min-h-screen bg-white flex flex-col justify-center overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6 w-full pt-20 pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-center min-h-[calc(100vh-9rem)]">
 
-      {/* Subtle texture overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='4' height='4' viewBox='0 0 4 4' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='0.8' fill='%23ffffff'/%3E%3C/svg%3E\")",
-          backgroundSize: "4px 4px",
-        }}
-      />
-
-      {/* Keyboard keys */}
-      {KEYS.map((key, i) => (
-        <KeyboardKey key={i} label={key.label} style={key.style} delay={key.delay} />
-      ))}
-
-      <div className="relative z-20 w-full max-w-4xl mx-auto px-6 pt-28 pb-16 flex flex-col items-center gap-8">
-
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1, duration: 0.5 }}
-          className="flex items-center gap-2 px-4 py-1.5 rounded-full text-sm"
-          style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.6)" }}
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-          Status: Spraying Insecticide to Prod
-        </motion.div>
-
-        {/* Name */}
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="text-center"
-        >
-          <h1
-            className="font-semibold text-white leading-none"
-            style={{ fontSize: "clamp(4rem, 14vw, 9rem)", letterSpacing: "-0.035em" }}
+          {/* ── Left: text ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="flex flex-col gap-5 max-w-xl"
           >
-            Drawde
-          </h1>
-        </motion.div>
+            {/* Status badge */}
+            <div className="inline-flex items-center gap-2 w-fit">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0" />
+              <span className="text-xs font-mono text-text-muted">
+                Status: Spraying Insecticide to Prod
+              </span>
+            </div>
 
-        {/* Subtitle */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.35, duration: 0.6 }}
-          className="text-center max-w-md"
-        >
-          <p className="text-sm font-medium mb-2" style={{ color: "rgba(255,255,255,0.5)" }}>
-            Full-stack engineer
-          </p>
-          <p className="text-sm leading-relaxed font-light" style={{ color: "rgba(255,255,255,0.4)" }}>
-            Building production web and mobile apps in React, Next.js, Flutter, and React Native —
-            from Figma files to live deployments.
-          </p>
-        </motion.div>
+            {/* Greeting + name */}
+            <div>
+              <p className="text-sm font-medium text-text-muted mb-2 tracking-wide">
+                Hello, I&apos;m
+              </p>
+              <h1
+                className="font-bold text-ink tracking-tight leading-none"
+                style={{ fontSize: "clamp(3.8rem, 9vw, 7rem)" }}
+              >
+                Drawde
+              </h1>
+              <p className="mt-3 text-lg font-medium text-text-secondary">
+                Full-stack engineer
+              </p>
+            </div>
 
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          className="flex flex-col sm:flex-row gap-3"
-        >
-          <button
-            onClick={() => go("projects")}
-            className="px-7 py-3 text-sm font-medium bg-white text-ink rounded-full hover:opacity-85 transition-opacity duration-200 cursor-pointer"
+            {/* Body */}
+            <p className="text-base text-text-secondary leading-relaxed font-light">
+              Building production web and mobile apps in React, Next.js, Flutter,
+              and React Native — from Figma files to live deployments.
+            </p>
+
+            {/* Social icons */}
+            <div className="flex items-center gap-2">
+              {SOCIALS.map(({ href, icon: Icon, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  aria-label={label}
+                  className="p-2.5 rounded-xl border border-black/10 text-text-secondary hover:text-ink hover:border-black/20 transition-all duration-200"
+                >
+                  <Icon size={17} />
+                </a>
+              ))}
+            </div>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-3 pt-1">
+              <button
+                onClick={() => scrollTo("projects")}
+                className="px-7 py-3.5 text-sm font-semibold bg-ink text-white rounded-full hover:opacity-75 transition-opacity duration-200 cursor-pointer"
+              >
+                View My Work
+              </button>
+              <button
+                onClick={() => scrollTo("contact")}
+                className="px-7 py-3.5 text-sm font-semibold rounded-full border border-black/12 text-text-secondary hover:text-ink hover:border-black/25 transition-all duration-200 cursor-pointer"
+              >
+                Get in Touch
+              </button>
+            </div>
+          </motion.div>
+
+          {/* ── Right: illustration ── */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.93 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.75, delay: 0.15, ease: "easeOut" }}
+            className="flex items-center justify-center lg:justify-end"
           >
-            View My Work
-          </button>
-          <button
-            onClick={() => go("contact")}
-            className="px-7 py-3 text-sm font-medium rounded-full transition-all duration-200 cursor-pointer hover:bg-white/[0.06]"
-            style={{ border: "1px solid rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.7)" }}
-          >
-            Get in Touch
-          </button>
-        </motion.div>
+            <div
+              className="relative select-none"
+              style={{ width: "clamp(260px, 38vw, 480px)" }}
+            >
+              <Image
+                src="/illustration-hero.png"
+                alt="Cat on keyboard"
+                width={480}
+                height={480}
+                className="w-full h-auto object-contain"
+                priority
+              />
+            </div>
+          </motion.div>
+        </div>
       </div>
 
       {/* Scroll hint */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
-        style={{ color: "rgba(255,255,255,0.3)" }}
+        transition={{ delay: 1.8, duration: 0.6 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-black/25"
       >
         <motion.div
           animate={{ y: [0, 5, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ChevronDown size={15} />
+          <ChevronDown size={20} />
         </motion.div>
       </motion.div>
     </section>

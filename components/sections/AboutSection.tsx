@@ -3,87 +3,111 @@
 import { motion } from "framer-motion";
 import { MapPin, GraduationCap } from "lucide-react";
 import Image from "next/image";
-import SectionHeader from "@/components/ui/SectionHeader";
 
 export default function AboutSection() {
+  const scrollTo = (id: string) =>
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+
   return (
-    <section id="about" className="py-28 section-light divider-light">
+    <section
+      id="about"
+      className="py-28 bg-white"
+      style={{ borderTop: "1px solid rgba(0,0,0,0.07)" }}
+    >
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
-          {/* Left */}
+          {/* ── Left: illustration ── */}
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.65, ease: "easeOut" }}
-          >
-            <SectionHeader eyebrow="About Me" title="Building Software That Ships" align="left" className="mb-8" />
-
-            <p className="text-text-secondary leading-[1.8] mb-5 font-light text-base">
-              I&apos;m a software engineer based in the Philippines who turns complex
-              product requirements into clean, production-ready applications. At Qymera,
-              I&apos;ve shipped 8+ systems across web and mobile — from insurance platforms
-              and HRIS tools to real-time chatbots and blockchain applications.
-            </p>
-            <p className="text-text-secondary leading-[1.8] font-light text-base">
-              With a background spanning React, Next.js, Flutter, React Native, and
-              supporting backend work in Node.js and Django, I bring cross-platform
-              fluency to every project. Whether it&apos;s a 3-day hackathon or a long-term
-              SaaS build, I deliver.
-            </p>
-          </motion.div>
-
-          {/* Right — polaroid identity card */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.65, ease: "easeOut", delay: 0.12 }}
-            className="flex justify-center lg:justify-end"
+            transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="flex items-center justify-center"
           >
             <div
-              className="polaroid rounded-sm p-6 pb-10 w-full max-w-[280px] text-center"
-              style={{ border: "1px solid rgba(0,0,0,0.07)" }}
+              className="relative select-none"
+              style={{ width: "clamp(240px, 40vw, 460px)" }}
             >
-              {/* Photo area — icon */}
-              <div
-                className="w-full mb-6 flex items-center justify-center overflow-hidden"
-                style={{ height: "200px", background: "#111111" }}
+              <Image
+                src="/illustration-about.png"
+                alt="Cozy coding setup with cat"
+                width={460}
+                height={460}
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          </motion.div>
+
+          {/* ── Right: text ── */}
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.65, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="flex flex-col gap-6"
+          >
+            <div>
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-text-muted mb-3">
+                About Me
+              </p>
+              <h2
+                className="font-bold text-ink tracking-tight leading-[1.1]"
+                style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
               >
-                <Image
-                  src="/icon.png"
-                  alt="Drawde"
-                  width={120}
-                  height={120}
-                  className="object-contain select-none"
-                  priority
-                />
-              </div>
+                Building Software
+                <br />
+                That Ships
+              </h2>
+            </div>
 
-              <div className="text-sm font-semibold text-ink mb-0.5">John Edward D. Complido</div>
-              <div className="flex items-center justify-center gap-1.5 text-xs text-text-muted mb-4">
-                <MapPin size={10} />
-                <span>Bocaue, Bulacan</span>
-              </div>
+            <p className="text-base text-text-secondary leading-relaxed font-light">
+              I&apos;m a software engineer with two years of experience building
+              production systems for enterprise clients — insurance platforms,
+              HRIS, multi-tenant POS, and custom internal tools. I live at the
+              intersection of design and engineering, which means I care about
+              how things look as much as how they work.
+            </p>
+            <p className="text-base text-text-secondary leading-relaxed font-light">
+              My typical stack is React or Next.js on the front, Flutter or
+              React Native on mobile, and whatever backend the project calls for.
+              I&apos;ve shipped apps used daily by real users, not just toy projects.
+            </p>
 
-              <div className="w-full h-px bg-black/[0.06] mb-4" />
-
-              <div className="flex items-center justify-center gap-2 text-xs text-text-muted mb-5">
-                <GraduationCap size={12} className="shrink-0" />
-                <div className="text-left">
-                  <div className="text-ink font-medium text-xs">BS Computer Science</div>
-                  <div className="text-text-muted text-[11px]">TUP · 2023</div>
+            {/* Info chips */}
+            <div className="flex flex-col gap-3 pt-1">
+              <div className="flex items-center gap-3">
+                <div
+                  className="p-2 rounded-lg shrink-0"
+                  style={{ background: "#F5F5F3", border: "1px solid rgba(0,0,0,0.07)" }}
+                >
+                  <MapPin size={14} className="text-text-secondary" />
                 </div>
+                <span className="text-sm text-text-secondary font-light">
+                  Bocaue, Bulacan, Philippines
+                </span>
               </div>
+              <div className="flex items-center gap-3">
+                <div
+                  className="p-2 rounded-lg shrink-0"
+                  style={{ background: "#F5F5F3", border: "1px solid rgba(0,0,0,0.07)" }}
+                >
+                  <GraduationCap size={14} className="text-text-secondary" />
+                </div>
+                <span className="text-sm text-text-secondary font-light">
+                  BS Information Technology — Bulacan State University
+                </span>
+              </div>
+            </div>
 
-              <div className="flex flex-wrap gap-1 justify-center">
-                {["React","Next.js","Flutter","React Native","Vue.js","TypeScript","Node.js","Django"].map((t) => (
-                  <span key={t} className="px-2 py-0.5 text-[9px] font-mono rounded-sm border text-text-muted" style={{ borderColor: "rgba(0,0,0,0.1)", background: "#F5F5F3" }}>
-                    {t}
-                  </span>
-                ))}
-              </div>
+            {/* CTA */}
+            <div className="pt-2">
+              <button
+                onClick={() => scrollTo("contact")}
+                className="px-7 py-3.5 text-sm font-semibold bg-ink text-white rounded-full hover:opacity-75 transition-opacity duration-200 cursor-pointer"
+              >
+                Get in Touch
+              </button>
             </div>
           </motion.div>
         </div>

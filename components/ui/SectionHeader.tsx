@@ -8,7 +8,7 @@ interface SectionHeaderProps {
   title:     string;
   subtitle?: string;
   align?:    "left" | "center";
-  dark?:     boolean;  // true when inside a dark section
+  dark?:     boolean;
   className?: string;
 }
 
@@ -24,22 +24,21 @@ export default function SectionHeader({
       className={cn("mb-16", align === "center" ? "text-center" : "text-left", className)}
     >
       <p className={cn(
-        "text-[10px] font-semibold tracking-[0.22em] uppercase mb-4",
-        align === "center" ? "text-center" : "text-left",
+        "text-xs font-semibold tracking-[0.2em] uppercase mb-4",
         dark ? "text-text-light-muted" : "text-text-muted"
       )}>
         {eyebrow}
       </p>
       <h2 className={cn(
-        "font-semibold leading-tight mb-5",
-        "text-[clamp(1.75rem,3vw,2.75rem)] tracking-[-0.02em]",
+        "font-bold tracking-tight leading-[1.1] mb-5",
+        "text-[clamp(2rem,4vw,3.2rem)]",
         dark ? "text-white" : "text-ink"
       )}>
         {title}
       </h2>
       {subtitle && (
         <p className={cn(
-          "text-base md:text-lg leading-relaxed font-light",
+          "text-base leading-relaxed font-light",
           align === "center" ? "max-w-xl mx-auto" : "max-w-xl",
           dark ? "text-text-light-muted" : "text-text-secondary"
         )}>

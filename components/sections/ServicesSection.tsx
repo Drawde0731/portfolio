@@ -9,40 +9,62 @@ import type { LucideIcon } from "lucide-react";
 const SERVICE_ICONS: Record<string, LucideIcon> = { Code2, Smartphone, Layout, Zap };
 
 export default function ServicesSection() {
+  const scrollToContact = () =>
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+
   return (
-    <section id="services" className="py-28 section-dark" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+    <section
+      id="services"
+      className="py-28 section-light"
+      style={{ borderTop: "1px solid rgba(0,0,0,0.07)" }}
+    >
       <div className="max-w-6xl mx-auto px-6">
-        <SectionHeader eyebrow="Services" title="What I Build For You"
-          subtitle="End-to-end development across web, mobile, and automation." dark />
+        <SectionHeader
+          eyebrow="Services"
+          title="What I Build"
+          subtitle="End-to-end development across web, mobile, and automation."
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {SERVICES.map((service, i) => {
             const Icon = SERVICE_ICONS[service.icon] ?? Code2;
             return (
-              <motion.div key={service.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.09 }}>
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.09 }}
+              >
                 <div
-                  className="bg-white/[0.04] hover:bg-white/[0.07] rounded-xl p-8 h-full flex flex-col transition-colors duration-300"
-                  style={{ border: "1px solid rgba(255,255,255,0.07)" }}
+                  className="bg-white hover:shadow-card-hover rounded-xl p-8 h-full flex flex-col transition-shadow duration-300"
+                  style={{ border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}
                 >
-                  <div className="p-3 rounded-lg w-fit mb-6" style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.1)" }}>
-                    <Icon size={20} style={{ color: "rgba(255,255,255,0.6)" }} />
+                  {/* Icon */}
+                  <div
+                    className="p-3 rounded-lg w-fit mb-6"
+                    style={{ background: "#F5F5F3", border: "1px solid rgba(0,0,0,0.08)" }}
+                  >
+                    <Icon size={20} className="text-text-secondary" />
                   </div>
-                  <h3 className="text-base font-semibold text-white mb-2.5">{service.title}</h3>
-                  <p className="text-sm leading-relaxed mb-6 flex-1 font-light" style={{ color: "rgba(255,255,255,0.55)" }}>
+
+                  <h3 className="text-base font-semibold text-ink mb-2.5">{service.title}</h3>
+                  <p className="text-sm text-text-secondary leading-relaxed mb-6 flex-1 font-light">
                     {service.description}
                   </p>
+
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-3 text-sm font-light" style={{ color: "rgba(255,255,255,0.5)" }}>
-                        <span className="w-1 h-1 rounded-full shrink-0" style={{ background: "rgba(255,255,255,0.2)" }} />
+                      <li key={feature} className="flex items-center gap-3 text-sm font-light text-text-muted">
+                        <span className="w-1 h-1 rounded-full shrink-0 bg-text-muted/40" />
                         {feature}
                       </li>
                     ))}
                   </ul>
+
                   <button
-                    onClick={() => { const el = document.getElementById("contact"); if (el) el.scrollIntoView({ behavior: "smooth" }); }}
-                    className="text-sm font-medium transition-colors duration-200 cursor-pointer text-left text-white/40 hover:text-white/90"
+                    onClick={scrollToContact}
+                    className="text-sm font-medium text-left text-text-muted hover:text-ink transition-colors duration-200 cursor-pointer"
                   >
                     Get a quote →
                   </button>
