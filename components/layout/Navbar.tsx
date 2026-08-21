@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import ResumeModal from "@/components/ui/ResumeModal";
 
 const SECTION_OFFSETS: Record<string, number> = {
   about:      50,
@@ -15,9 +16,10 @@ const SECTION_OFFSETS: Record<string, number> = {
 };
 
 export default function Navbar() {
-  const [scrolled,    setScrolled]    = useState(false);
-  const [mobileOpen,  setMobileOpen]  = useState(false);
+  const [scrolled,      setScrolled]      = useState(false);
+  const [mobileOpen,    setMobileOpen]    = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [resumeOpen,    setResumeOpen]    = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -106,10 +108,10 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <button
-              onClick={() => scrollTo("#contact")}
+              onClick={() => setResumeOpen(true)}
               className="px-6 py-2.5 text-[15px] font-semibold bg-ink text-white rounded-full hover:opacity-75 transition-opacity duration-200 cursor-pointer"
             >
-              Let&apos;s Talk
+              Resume
             </button>
           </div>
 
@@ -145,15 +147,17 @@ export default function Navbar() {
             ))}
             <div className="pt-3 mt-1 border-t border-black/[0.07]">
               <button
-                onClick={() => scrollTo("#contact")}
+                onClick={() => { setMobileOpen(false); setResumeOpen(true); }}
                 className="w-full py-3 text-sm font-semibold bg-ink text-white rounded-full hover:opacity-75 transition-opacity duration-200 cursor-pointer"
               >
-                Let&apos;s Talk
+                Resume
               </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      <ResumeModal open={resumeOpen} onClose={() => setResumeOpen(false)} />
     </>
   );
 }
