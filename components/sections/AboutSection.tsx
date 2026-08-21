@@ -85,7 +85,7 @@ export default function AboutSection() {
               <div className="flex items-center gap-3">
                 <div
                   className="p-2 rounded-lg shrink-0"
-                  style={{ background: "#F5F5F3", border: "1px solid rgba(0,0,0,0.07)" }}
+                  style={{ background: "#FFFFFF", border: "1px solid rgba(0,0,0,0.07)" }}
                 >
                   <MapPin size={14} className="text-text-secondary" />
                 </div>
@@ -96,7 +96,7 @@ export default function AboutSection() {
               <div className="flex items-center gap-3">
                 <div
                   className="p-2 rounded-lg shrink-0"
-                  style={{ background: "#F5F5F3", border: "1px solid rgba(0,0,0,0.07)" }}
+                  style={{ background: "#FFFFFF", border: "1px solid rgba(0,0,0,0.07)" }}
                 >
                   <GraduationCap size={14} className="text-text-secondary" />
                 </div>
