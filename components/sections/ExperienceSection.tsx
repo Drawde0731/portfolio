@@ -97,7 +97,7 @@ export default function ExperienceSection() {
                   style={{ border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}
                 >
                   <div className="p-2.5 rounded-xl shrink-0 group-hover:bg-ink group-hover:border-ink transition-all duration-200"
-                    style={{ background: "#F5F5F3", border: "1px solid rgba(0,0,0,0.07)" }}>
+                    style={{ background: "#FFFFFF", border: "1px solid rgba(0,0,0,0.07)" }}>
                     <Icon size={14} className="text-text-secondary group-hover:text-gray-300 transition-colors duration-200" />
                   </div>
                   <div>

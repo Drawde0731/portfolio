@@ -61,18 +61,18 @@ export default function AboutSection() {
               </h2>
             </div>
 
-            <p className="text-base text-text-secondary leading-relaxed font-light">
+            <p className="text-sm text-text-secondary leading-relaxed font-light">
               I&apos;m a software engineer focused on building production systems
               across web, mobile, AI, and automation.
             </p>
-            <p className="text-base text-text-secondary leading-relaxed font-light">
+            <p className="text-sm text-text-secondary leading-relaxed font-light">
               I build web applications with React and Next.js, mobile apps with
               Flutter and React Native, and backend systems tailored to the needs
               of each project. I also work with AI and automation, building
               intelligent workflows and tools that simplify processes, analyze
               information, and support real business decisions.
             </p>
-            <p className="text-base text-text-secondary leading-relaxed font-light">
+            <p className="text-sm text-text-secondary leading-relaxed font-light">
               I&apos;ve worked on real-world systems across insurance, HRIS,
               multi-tenant POS, blockchain, queue management, and AI-powered
               workflows. This includes fine-tuning and experimenting with deep
