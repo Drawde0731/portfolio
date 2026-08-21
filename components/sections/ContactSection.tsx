@@ -185,23 +185,16 @@ export default function ContactSection() {
               style={{ fontSize: "clamp(2.4rem, 5vw, 3.8rem)" }}
             >
               Let&apos;s{" "}
-              <span
-                style={{
-                  WebkitTextStroke: "2px #111111",
-                  color: "transparent",
-                  display: "inline",
-                }}
-              >
-                Talk
-              </span>{" "}
-              for
+              <span style={{ WebkitTextStroke: "2px #111111", color: "transparent" }}>
+                Work
+              </span>
               <br />
-              Something Special
+              Together
             </h2>
 
             <p className="text-sm text-text-secondary font-light leading-relaxed max-w-sm">
-              Building production web and mobile apps that actually ship, from Figma files to live
-              deployments. Let&apos;s build something together.
+              Building production-ready web and mobile applications. Let&apos;s turn your ideas
+              into products that work, scale, and ship.
             </p>
 
             <div className="flex flex-col gap-3 pt-2">
