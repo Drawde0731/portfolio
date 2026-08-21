@@ -9,9 +9,6 @@ import type { LucideIcon } from "lucide-react";
 const SERVICE_ICONS: Record<string, LucideIcon> = { Code2, Smartphone, Layout, Zap };
 
 export default function ServicesSection() {
-  const scrollToContact = () =>
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-
   return (
     <section
       id="services"
@@ -62,12 +59,6 @@ export default function ServicesSection() {
                     ))}
                   </ul>
 
-                  <button
-                    onClick={scrollToContact}
-                    className="text-sm font-medium text-left text-text-muted hover:text-ink transition-colors duration-200 cursor-pointer"
-                  >
-                    Get a quote →
-                  </button>
                 </div>
               </motion.div>
             );
