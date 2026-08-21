@@ -35,7 +35,7 @@ export default function HeroSection() {
             >
               Hello I&apos;m Drawde,
               <br />
-              Software{" "}
+              <span style={outlined}>Software</span>{" "}
               <span style={outlined}>Engineer</span>
             </h1>
 
