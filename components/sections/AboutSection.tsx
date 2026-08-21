@@ -79,13 +79,6 @@ export default function AboutSection() {
               learning models, developing AI chatbots, and automating complex
               business processes such as loan processing and insurance claims.
             </p>
-            <p className="text-base text-text-secondary leading-relaxed font-light">
-              Outside of professional work, I enjoy building things from scratch.
-              I&apos;ve created a photobooth app, a jeepney fare calculator, a
-              full POS system for a coffee brand, and AI-powered tools and
-              automations that turn ideas and complex processes into working
-              products.
-            </p>
 
             {/* Info chips */}
             <div className="flex flex-col gap-3 pt-1">
