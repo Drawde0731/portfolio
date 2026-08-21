@@ -5,12 +5,6 @@ import { MapPin, GraduationCap } from "lucide-react";
 import Image from "next/image";
 import SectionHeader from "@/components/ui/SectionHeader";
 
-const STATS = [
-  { value: "8+", label: "Systems Shipped"  },
-  { value: "2+", label: "Years Experience" },
-  { value: "5+", label: "Frameworks"       },
-];
-
 export default function AboutSection() {
   return (
     <section id="about" className="py-28 section-light divider-light">
@@ -32,21 +26,12 @@ export default function AboutSection() {
               I&apos;ve shipped 8+ systems across web and mobile — from insurance platforms
               and HRIS tools to real-time chatbots and blockchain applications.
             </p>
-            <p className="text-text-secondary leading-[1.8] mb-12 font-light text-base">
+            <p className="text-text-secondary leading-[1.8] font-light text-base">
               With a background spanning React, Next.js, Flutter, React Native, and
               supporting backend work in Node.js and Django, I bring cross-platform
               fluency to every project. Whether it&apos;s a 3-day hackathon or a long-term
               SaaS build, I deliver.
             </p>
-
-            <div className="grid grid-cols-3 gap-0 border-t border-black/[0.08]">
-              {STATS.map((stat) => (
-                <div key={stat.label} className="text-center py-6 px-2 border-r last:border-r-0 border-black/[0.08]">
-                  <div className="text-[2.5rem] font-semibold text-ink leading-none mb-1.5 tracking-tight">{stat.value}</div>
-                  <div className="text-[10px] text-text-muted uppercase tracking-[0.14em] font-medium">{stat.label}</div>
-                </div>
-              ))}
-            </div>
           </motion.div>
 
           {/* Right — polaroid identity card */}

@@ -44,7 +44,6 @@ export default function ContactSection() {
   };
 
   return (
-    // DARK section
     <section id="contact" className="py-28 section-dark" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="max-w-6xl mx-auto px-6">
         <SectionHeader eyebrow="Let's Connect" title="Start a Project"
@@ -71,7 +70,7 @@ export default function ContactSection() {
                     <Icon size={14} style={{ color: "rgba(255,255,255,0.5)" }} />
                   </div>
                   {href
-                    ? <a href={href} className="text-sm font-light transition-colors duration-200" style={{ color: "rgba(255,255,255,0.6)" }} onMouseEnter={e => { (e.target as HTMLElement).style.color = "#fff"; }} onMouseLeave={e => { (e.target as HTMLElement).style.color = "rgba(255,255,255,0.6)"; }}>{label}</a>
+                    ? <a href={href} className="text-sm font-light text-white/60 hover:text-white transition-colors duration-200">{label}</a>
                     : <span className="text-sm font-light" style={{ color: "rgba(255,255,255,0.6)" }}>{label}</span>
                   }
                 </div>
@@ -86,10 +85,7 @@ export default function ContactSection() {
               ].map(({ href, icon: Icon, label }) => (
                 <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined}
                   rel={href.startsWith("http") ? "noopener noreferrer" : undefined} aria-label={label}
-                  className="p-2.5 rounded-xl transition-all duration-200"
-                  style={{ border: "1px solid rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.5)" }}
-                  onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.color = "#fff"; el.style.borderColor = "rgba(255,255,255,0.25)"; }}
-                  onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.color = "rgba(255,255,255,0.5)"; el.style.borderColor = "rgba(255,255,255,0.1)"; }}
+                  className="p-2.5 rounded-xl border border-white/10 text-white/50 hover:text-white hover:border-white/25 transition-all duration-200"
                 >
                   <Icon size={16} />
                 </a>
@@ -115,10 +111,11 @@ export default function ContactSection() {
                   <CheckCircle2 size={26} className="text-green-400" />
                 </div>
                 <div>
-                  <h3 className="text-base font-semibold text-white mb-1.5">Message Sent!</h3>
+                  <h3 className="text-base font-semibold text-white mb-1.5">Message sent.</h3>
                   <p className="text-sm font-light" style={{ color: "rgba(255,255,255,0.5)" }}>I&apos;ll be in touch within 24 hours.</p>
                 </div>
-                <button onClick={() => setStatus("idle")} className="text-sm transition-colors cursor-pointer" style={{ color: "rgba(255,255,255,0.4)" }} onMouseEnter={e => { (e.target as HTMLElement).style.color = "#fff"; }} onMouseLeave={e => { (e.target as HTMLElement).style.color = "rgba(255,255,255,0.4)"; }}>
+                <button onClick={() => setStatus("idle")}
+                  className="text-sm transition-colors cursor-pointer text-white/40 hover:text-white">
                   Send another message
                 </button>
               </div>

@@ -1,29 +1,10 @@
 export const NAV_LINKS = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" },
+  { label: "About",      href: "#about"      },
+  { label: "Projects",   href: "#projects"   },
+  { label: "Experience", href: "#experience" },
+  { label: "Services",   href: "#services"   },
+  { label: "Contact",    href: "#contact"    },
 ];
-
-export const SKILLS = {
-  frontend: [
-    "React",
-    "Next.js",
-    "Vue.js",
-    "TypeScript",
-    "JavaScript",
-    "Tailwind CSS",
-    "Bootstrap",
-    "HTML",
-    "CSS",
-  ],
-  mobile: ["Flutter", "React Native", "Expo"],
-  backend: ["Node.js", "Django", "FastAPI", "REST APIs"],
-  database: ["MongoDB", "MySQL", "MS SQL", "Firebase"],
-  tools: ["Git", "GitHub", "Figma", "Adobe XD", "Oracle APEX", "VS Code"],
-  ai: ["Dify", "Deep Learning", "n8n", "UIPath", "IBM RPA"],
-};
 
 export const PROJECTS = [
   {
@@ -77,7 +58,7 @@ export const SERVICES = [
     icon: "Code2",
     title: "Full Stack Web Development",
     description:
-      "Custom web applications built with React, Next.js, and Node.js. From landing pages to complex SaaS dashboards — production-ready from day one.",
+      "React, Next.js, and Node.js across the whole stack. I've shipped insurance platforms, HRIS tools, real-time dashboards, and a multi-tenant POS system. The scope doesn't intimidate me.",
     features: [
       "UI/UX implementation from Figma",
       "REST API development & integration",
@@ -89,7 +70,7 @@ export const SERVICES = [
     icon: "Smartphone",
     title: "Cross-Platform Mobile Apps",
     description:
-      "Native-quality mobile applications using Flutter and React Native. One codebase. iOS and Android. Real performance.",
+      "Flutter and React Native — one codebase for iOS and Android. I've built queue management apps, event apps, and blockchain frontends. The experience is consistent on both platforms.",
     features: [
       "Flutter app development",
       "React Native apps",
@@ -101,7 +82,7 @@ export const SERVICES = [
     icon: "Layout",
     title: "Frontend Engineering",
     description:
-      "Pixel-perfect UI implementation from any design file. Every component, every interaction, every breakpoint — exactly as designed.",
+      "Figma or Adobe XD to code, component by component, breakpoint by breakpoint. Eight production systems in — I know exactly where the gaps between design and implementation hide.",
     features: [
       "Figma / Adobe XD to code",
       "Component library development",
@@ -113,7 +94,7 @@ export const SERVICES = [
     icon: "Zap",
     title: "API Integration & Automation",
     description:
-      "Connect your frontend to any backend, third-party service, or automated workflow. Clean integrations that just work.",
+      "REST APIs, third-party integrations, and automated workflows. Certified in UIPath and IBM RPA. I connect the moving parts — backends, services, and pipelines — and make them stay connected.",
     features: [
       "Third-party API integration",
       "Node.js / Django backend",

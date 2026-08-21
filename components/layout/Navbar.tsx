@@ -23,7 +23,7 @@ export default function Navbar() {
   }, []);
 
   const SECTION_OFFSETS: Record<string, number> = {
-    about: 50, skills: 50, projects: 10, services: 0, contact: 50,
+    about: 50, experience: 50, projects: 10, services: 0, contact: 50,
   };
 
   const scrollTo = (href: string) => {
@@ -92,7 +92,7 @@ export default function Navbar() {
                 : "bg-white text-ink hover:opacity-80"
             )}
           >
-            Hire Me
+            Let&apos;s Talk
           </button>
         </div>
 
@@ -146,7 +146,7 @@ export default function Navbar() {
                     isLight ? "bg-ink text-white" : "bg-white text-ink"
                   )}
                 >
-                  Hire Me
+                  Let&apos;s Talk
                 </button>
               </li>
             </ul>

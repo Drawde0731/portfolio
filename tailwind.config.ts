@@ -39,7 +39,7 @@ const config: Config = {
         sans: [
           "-apple-system", "BlinkMacSystemFont",
           "SF Pro Display", "SF Pro Text",
-          "var(--font-inter)", "system-ui", "sans-serif",
+          "system-ui", "sans-serif",
         ],
         mono: ["SF Mono", "ui-monospace", "Menlo", "monospace"],
       },

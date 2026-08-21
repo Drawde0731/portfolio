@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { PROJECTS } from "@/lib/constants";
 
@@ -38,11 +38,11 @@ export default function ProjectsSection() {
                 >
                   <div className="w-full h-full flex items-center justify-center relative">
                     <div className="text-center px-8 select-none transition-opacity duration-300 group-hover/photo:opacity-30">
-                      <div className="font-semibold text-white/10 mb-2"
+                      <div className="font-semibold text-white/20 mb-2"
                         style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)", letterSpacing: "-0.04em", lineHeight: 1 }}>
                         {project.title.split(" ").map((w: string) => w[0]).join("").slice(0, 3)}
                       </div>
-                      <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/25">{project.category}</div>
+                      <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/30">{project.category}</div>
                     </div>
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/photo:opacity-100 transition-opacity duration-300">
                       <div className="flex items-center gap-2 text-white text-sm font-medium">
@@ -87,16 +87,6 @@ export default function ProjectsSection() {
                       <ExternalLink size={12} />
                       Live Site
                     </a>
-                    {/* <span className="text-text-muted text-xs">·</span>
-                    <a
-                      href={project.repoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-xs font-medium text-text-secondary hover:text-ink transition-colors"
-                    >
-                      <Github size={12} />
-                      Source
-                    </a> */}
                   </div>
                 </div>
               </div>

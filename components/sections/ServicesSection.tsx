@@ -10,7 +10,6 @@ const SERVICE_ICONS: Record<string, LucideIcon> = { Code2, Smartphone, Layout, Z
 
 export default function ServicesSection() {
   return (
-    // DARK section
     <section id="services" className="py-28 section-dark" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="max-w-6xl mx-auto px-6">
         <SectionHeader eyebrow="Services" title="What I Build For You"
@@ -23,12 +22,10 @@ export default function ServicesSection() {
               <motion.div key={service.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.09 }}>
                 <div
-                  className="rounded-2xl p-8 h-full flex flex-col transition-all duration-300"
-                  style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)" }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.07)"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.04)"; }}
+                  className="bg-white/[0.04] hover:bg-white/[0.07] rounded-xl p-8 h-full flex flex-col transition-colors duration-300"
+                  style={{ border: "1px solid rgba(255,255,255,0.07)" }}
                 >
-                  <div className="p-3 rounded-xl w-fit mb-6" style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.1)" }}>
+                  <div className="p-3 rounded-lg w-fit mb-6" style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.1)" }}>
                     <Icon size={20} style={{ color: "rgba(255,255,255,0.6)" }} />
                   </div>
                   <h3 className="text-base font-semibold text-white mb-2.5">{service.title}</h3>
@@ -45,10 +42,7 @@ export default function ServicesSection() {
                   </ul>
                   <button
                     onClick={() => { const el = document.getElementById("contact"); if (el) el.scrollIntoView({ behavior: "smooth" }); }}
-                    className="text-sm font-medium transition-colors duration-200 cursor-pointer text-left"
-                    style={{ color: "rgba(255,255,255,0.4)" }}
-                    onMouseEnter={e => { (e.target as HTMLElement).style.color = "rgba(255,255,255,0.9)"; }}
-                    onMouseLeave={e => { (e.target as HTMLElement).style.color = "rgba(255,255,255,0.4)"; }}
+                    className="text-sm font-medium transition-colors duration-200 cursor-pointer text-left text-white/40 hover:text-white/90"
                   >
                     Get a quote →
                   </button>
