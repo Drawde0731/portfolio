@@ -52,7 +52,7 @@ export default function ServicesSection() {
                     <span
                       key={tag}
                       className="px-2.5 py-1 text-[11px] font-mono rounded-full text-text-muted"
-                      style={{ background: "#F5F5F3", border: "1px solid rgba(0,0,0,0.08)" }}
+                      style={{ background: "#FFFFFF", border: "1px solid rgba(0,0,0,0.08)" }}
                     >
                       {tag}
                     </span>

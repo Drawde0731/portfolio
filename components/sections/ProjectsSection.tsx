@@ -43,7 +43,7 @@ export default function ProjectsSection() {
                     fontSize: "clamp(2.8rem, 5vw, 4.5rem)",
                     color: "#111111",
                     letterSpacing: "-0.04em",
-                    opacity: 0.15,
+                    opacity: 1,
                   }}
                 >
                   {String(i + 1).padStart(2, "0")}
@@ -84,7 +84,7 @@ export default function ProjectsSection() {
                     {project.tech.map((t: string) => (
                       <span key={t}
                         className="px-2.5 py-1 text-[10px] font-mono rounded-full text-text-muted"
-                        style={{ background: "#F5F5F3", border: "1px solid rgba(0,0,0,0.08)" }}>
+                        style={{ background: "#FFFFFF", border: "1px solid rgba(0,0,0,0.08)" }}>
                         {t}
                       </span>
                     ))}

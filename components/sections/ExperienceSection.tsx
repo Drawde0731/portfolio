@@ -60,7 +60,7 @@ export default function ExperienceSection() {
                 <div className="flex flex-wrap gap-1.5 pt-4" style={{ borderTop: "1px solid rgba(0,0,0,0.06)" }}>
                   {exp.tech.map((t) => (
                     <span key={t} className="px-2.5 py-1 text-[10px] font-mono rounded-full text-text-muted"
-                      style={{ background: "#F5F5F3", border: "1px solid rgba(0,0,0,0.08)" }}>
+                      style={{ background: "#FFFFFF", border: "1px solid rgba(0,0,0,0.08)" }}>
                       {t}
                     </span>
                   ))}
