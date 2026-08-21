@@ -33,13 +33,9 @@ export default function HeroSection() {
               className="font-bold text-ink leading-[1.05] tracking-tight"
               style={{ fontSize: "clamp(2.6rem, 5.5vw, 5rem)" }}
             >
-              Hello I&apos;m{" "}
-              <span className="inline">Drawde</span>
+              Hello I&apos;m Drawde,
               <br />
-              <span className="inline">Full-stack </span>
-              <span style={outlined}>Developer</span>
-              <br />
-              <span className="inline">&amp; Mobile </span>
+              Software{" "}
               <span style={outlined}>Engineer</span>
             </h1>
 
