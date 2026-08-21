@@ -79,27 +79,27 @@ export const SERVICES = [
     ],
   },
   {
-    icon: "Layout",
-    title: "Frontend Engineering",
+    icon: "Brain",
+    title: "AI Integration & Fine-Tuning",
     description:
-      "Figma or Adobe XD to code, component by component, breakpoint by breakpoint. Eight production systems in, I know exactly where the gaps between design and implementation hide.",
+      "Building AI-powered features and fine-tuning models for real use cases. I use Google Colab for training and experimentation, and Dify to wire AI into products as chatbots and multi-step workflows.",
     features: [
-      "Figma / Adobe XD to code",
-      "Component library development",
-      "Animation & micro-interactions",
-      "Responsive & accessible design",
+      "LLM fine-tuning via Google Colab",
+      "AI chatbot development with Dify",
+      "Multi-step AI workflow design",
+      "AI feature integration into apps",
     ],
   },
   {
     icon: "Zap",
-    title: "API Integration & Automation",
+    title: "Workflow Automation",
     description:
-      "REST APIs, third-party integrations, and automated workflows. Certified in UIPath and IBM RPA. I connect the moving parts, backends, services, and pipelines, and make them stay connected.",
+      "Automating repetitive business processes so they run without people in the loop. From n8n pipelines to certified UIPath and IBM RPA, I've automated loan processing, insurance claims, and ordering systems.",
     features: [
-      "Third-party API integration",
-      "Node.js / Django backend",
-      "RPA automation (UIPath, IBM)",
-      "Real-time data & WebSockets",
+      "n8n workflow automation",
+      "UIPath & IBM RPA (certified)",
+      "AI-powered process automation",
+      "System and API orchestration",
     ],
   },
 ];

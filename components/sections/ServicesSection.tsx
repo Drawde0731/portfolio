@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Smartphone, Layout, Zap } from "lucide-react";
+import { Code2, Smartphone, Brain, Zap } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { SERVICES } from "@/lib/constants";
 import type { LucideIcon } from "lucide-react";
 
-const SERVICE_ICONS: Record<string, LucideIcon> = { Code2, Smartphone, Layout, Zap };
+const SERVICE_ICONS: Record<string, LucideIcon> = { Code2, Smartphone, Brain, Zap };
 
 export default function ServicesSection() {
   return (
