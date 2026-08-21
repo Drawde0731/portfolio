@@ -91,7 +91,7 @@ export default function Navbar() {
                   key={href}
                   onClick={() => scrollTo(href)}
                   className={cn(
-                    "px-4 py-2 text-sm rounded-full transition-all duration-200 cursor-pointer",
+                    "px-5 py-2 text-[15px] rounded-full transition-all duration-200 cursor-pointer",
                     active
                       ? "bg-ink text-white font-medium"
                       : "text-text-secondary hover:text-ink hover:bg-black/5"
@@ -107,7 +107,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <button
               onClick={() => scrollTo("#contact")}
-              className="px-5 py-2.5 text-sm font-semibold bg-ink text-white rounded-full hover:opacity-75 transition-opacity duration-200 cursor-pointer"
+              className="px-6 py-2.5 text-[15px] font-semibold bg-ink text-white rounded-full hover:opacity-75 transition-opacity duration-200 cursor-pointer"
             >
               Let&apos;s Talk
             </button>

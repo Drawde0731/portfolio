@@ -31,7 +31,7 @@ export default function HeroSection() {
             {/* Headline */}
             <h1
               className="font-bold text-ink leading-[1.05] tracking-tight"
-              style={{ fontSize: "clamp(2.6rem, 5.5vw, 5rem)" }}
+              style={{ fontSize: "clamp(3.2rem, 7vw, 6.5rem)" }}
             >
               Hello I&apos;m Drawde,
               <br />
@@ -41,7 +41,7 @@ export default function HeroSection() {
 
             {/* Description */}
             <p
-              className="text-sm leading-relaxed font-light max-w-md"
+              className="text-base leading-relaxed font-light max-w-md"
               style={{ color: "#888888" }}
             >
               Web. Mobile. AI. Automation. One engineer.
@@ -77,7 +77,7 @@ export default function HeroSection() {
           >
             <div
               className="relative select-none"
-              style={{ width: "clamp(240px, 36vw, 460px)" }}
+              style={{ width: "clamp(300px, 44vw, 560px)" }}
             >
               <Image
                 src="/illustration-hero.png"
