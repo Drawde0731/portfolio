@@ -25,11 +25,11 @@ const SOCIALS = [
 const inputBase =
   "w-full px-4 py-3.5 text-sm text-ink placeholder-text-muted bg-white outline-none transition-colors duration-200 rounded-none";
 const inputStyle = {
-  border: "1px solid rgba(0,0,0,0.15)",
-  borderRadius: "4px",
+  border: "2px solid rgba(0,0,0,0.2)",
+  borderRadius: "6px",
 };
 const inputFocusStyle = {
-  border: "1px solid rgba(0,0,0,0.5)",
+  border: "2px solid #111111",
 };
 
 function Field({ children }: { children: React.ReactNode }) {
@@ -162,7 +162,7 @@ export default function ContactSection() {
                       rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                       aria-label={label}
                       className="p-3 text-text-secondary hover:text-ink transition-colors duration-200"
-                      style={{ border: "1px solid rgba(0,0,0,0.15)", borderRadius: "6px" }}
+                      style={{ border: "2px solid rgba(0,0,0,0.2)", borderRadius: "6px" }}
                     >
                       <Icon size={16} />
                     </a>
