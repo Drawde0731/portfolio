@@ -48,8 +48,7 @@ export default function HeroSection() {
               className="text-sm leading-relaxed font-light max-w-md"
               style={{ color: "#888888" }}
             >
-              Building production web and mobile apps in React, Next.js, Flutter,
-              and React Native — from Figma files to live deployments.
+              Web, mobile, AI, automation. One engineer, the whole stack.
             </p>
 
             {/* Social icons */}
