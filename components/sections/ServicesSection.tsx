@@ -15,7 +15,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="py-28 section-light"
+      className="py-28 bg-white"
       style={{ borderTop: "1px solid rgba(0,0,0,0.07)" }}
     >
       <div className="max-w-6xl mx-auto px-6">

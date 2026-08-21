@@ -12,15 +12,14 @@ export default function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="py-28 section-dark"
-      style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+      className="py-28 bg-white"
+      style={{ borderTop: "1px solid rgba(0,0,0,0.07)" }}
     >
       <div className="max-w-6xl mx-auto px-6">
         <SectionHeader
           eyebrow="Career"
           title="My Experience"
           subtitle="Two years shipping production software across web, mobile, and enterprise platforms."
-          dark
         />
 
         {/* Timeline */}
@@ -36,12 +35,11 @@ export default function ExperienceSection() {
               <div
                 className="bg-white rounded-2xl p-7"
                 style={{
-                  border: "1px solid rgba(0,0,0,0.07)",
+                  border: "1px solid rgba(0,0,0,0.08)",
                   borderLeft: exp.current ? "3px solid #F5C542" : "3px solid rgba(0,0,0,0.12)",
-                  boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
+                  boxShadow: "0 1px 4px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.04)",
                 }}
               >
-                {/* Header */}
                 <div className="flex flex-wrap items-start justify-between gap-3 mb-5">
                   <div>
                     <div className="flex items-center gap-2 mb-0.5 flex-wrap">
@@ -57,7 +55,6 @@ export default function ExperienceSection() {
                   <span className="text-xs text-text-muted font-mono shrink-0 pt-0.5">{exp.period}</span>
                 </div>
 
-                {/* Bullets */}
                 <ul className="space-y-2.5 mb-5">
                   {exp.bullets.map((bullet, bi) => (
                     <li key={bi} className="flex gap-3 text-sm text-text-secondary leading-relaxed font-light">
@@ -67,7 +64,6 @@ export default function ExperienceSection() {
                   ))}
                 </ul>
 
-                {/* Tech badges */}
                 <div className="flex flex-wrap gap-1.5 pt-4" style={{ borderTop: "1px solid rgba(0,0,0,0.06)" }}>
                   {exp.tech.map((t) => (
                     <span key={t} className="px-2.5 py-1 text-[10px] font-mono rounded-full text-text-muted"
@@ -82,8 +78,7 @@ export default function ExperienceSection() {
         </div>
 
         {/* Certifications */}
-        <p className="text-[10px] font-semibold tracking-[0.22em] uppercase mb-8 text-center"
-          style={{ color: "rgba(255,255,255,0.35)" }}>
+        <p className="text-[10px] font-semibold tracking-[0.22em] uppercase text-text-muted mb-8 text-center">
           Certifications
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -99,7 +94,7 @@ export default function ExperienceSection() {
               >
                 <a href={cert.href} target="_blank" rel="noopener noreferrer"
                   className="bg-white rounded-2xl p-5 flex items-center gap-4 group hover:shadow-card-hover transition-shadow duration-300 block"
-                  style={{ border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 1px 2px rgba(0,0,0,0.03)" }}
+                  style={{ border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}
                 >
                   <div className="p-2.5 rounded-xl shrink-0 group-hover:bg-ink group-hover:border-ink transition-all duration-200"
                     style={{ background: "#F5F5F3", border: "1px solid rgba(0,0,0,0.07)" }}>
