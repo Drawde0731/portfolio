@@ -1,5 +1,12 @@
+"use client";
+
 import { Github, Linkedin, Mail } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
+
+const scrollTo = (href: string) => {
+  const el = document.getElementById(href.replace("#", ""));
+  el?.scrollIntoView({ behavior: "smooth" });
+};
 
 export default function Footer() {
   return (
@@ -17,13 +24,13 @@ export default function Footer() {
             <ul className="flex flex-wrap justify-center gap-x-7 gap-y-2">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-sm font-light transition-colors duration-200"
+                  <button
+                    onClick={() => scrollTo(link.href)}
+                    className="text-sm font-light transition-colors duration-200 cursor-pointer hover:text-white"
                     style={{ color: "rgba(255,255,255,0.45)" }}
                   >
                     {link.label}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
