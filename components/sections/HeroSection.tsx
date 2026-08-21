@@ -98,7 +98,7 @@ export default function HeroSection() {
           className="text-center max-w-md"
         >
           <p className="text-sm font-medium mb-2" style={{ color: "rgba(255,255,255,0.5)" }}>
-            Full-stack engineer in the Philippines
+            Full-stack engineer
           </p>
           <p className="text-sm leading-relaxed font-light" style={{ color: "rgba(255,255,255,0.4)" }}>
             Building production web and mobile apps in React, Next.js, Flutter, and React Native —
