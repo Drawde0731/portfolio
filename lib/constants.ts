@@ -116,7 +116,8 @@ export const EXPERIENCE = [
       "Integrated REST and third-party APIs to support real-time data and user workflows.",
       "Contributed to backend development using Node.js, MongoDB, and Django when needed.",
       "Participated in code reviews, ticket management, and agile collaboration via GitHub.",
-      "Delivered features under tight deadlines, including a 3-day hackathon chatbot project.",
+      "Built AI-powered automation workflows using n8n — including loan processing, insurance claims, and ordering systems.",
+      "Created AI chatbots and multi-step workflows using Dify for internal tooling and client-facing products.",
     ],
     tech: [
       "Flutter",
@@ -127,6 +128,8 @@ export const EXPERIENCE = [
       "Node.js",
       "MongoDB",
       "Django",
+      "n8n",
+      "Dify",
     ],
   },
   {
