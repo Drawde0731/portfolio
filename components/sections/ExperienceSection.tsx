@@ -10,7 +10,7 @@ const CERT_ICONS: Record<string, LucideIcon> = { Bot, Database, Server, Link, Gr
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-28 section-light" style={{ borderTop: "1px solid rgba(0,0,0,0.07)" }}>
+    <section id="experience" className="py-28 section-white" style={{ borderTop: "1px solid rgba(0,0,0,0.07)" }}>
       <div className="max-w-6xl mx-auto px-6">
         <SectionHeader
           eyebrow="Career"

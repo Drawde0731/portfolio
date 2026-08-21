@@ -44,7 +44,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-28 section-dark" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+    <section id="contact" className="py-28 section-dark-2" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="max-w-6xl mx-auto px-6">
         <SectionHeader eyebrow="Let's Connect" title="Start a Project"
           subtitle="Have a project in mind or looking to hire? Let's talk." dark />

@@ -10,7 +10,7 @@ const IMAGE_BG = ["#111111", "#1A1A1A", "#111111", "#1A1A1A"];
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-28 section-white" style={{ borderTop: "1px solid rgba(0,0,0,0.07)" }}>
+    <section id="projects" className="py-28 section-light" style={{ borderTop: "1px solid rgba(0,0,0,0.07)" }}>
       <div className="max-w-6xl mx-auto px-6">
         <SectionHeader eyebrow="Portfolio" title="Featured Work"
           subtitle="Personal projects built for fun, for friends, and for real people." />
