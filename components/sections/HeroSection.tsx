@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
-import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const CatScene = dynamic(() => import("@/components/three/CatScene"), { ssr: false });
 
 const SOCIALS = [
   { href: "https://github.com/Drawde0731",                                   icon: Github,   label: "GitHub"   },
@@ -99,16 +101,9 @@ export default function HeroSection() {
           >
             <div
               className="relative select-none"
-              style={{ width: "clamp(300px, 44vw, 560px)" }}
+              style={{ width: "clamp(300px, 44vw, 560px)", height: "clamp(300px, 44vw, 560px)" }}
             >
-              <Image
-                src="/illustration-hero.png"
-                alt="Cat on keyboard"
-                width={560}
-                height={560}
-                className="w-full h-auto object-contain"
-                priority
-              />
+              <CatScene />
             </div>
           </motion.div>
 
